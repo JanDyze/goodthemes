@@ -195,9 +195,9 @@ function ekklesia() {
   return pieces;
 }
 
-/* ---- Swallowed: a great fish arching over the waves, three lights in its belly ---- */
+/* ---- Swallowed: the billows passing over, a whirlpool drawing down into the deep ---- */
 
-function bigFish() {
+function swallowed() {
   // A wave-edged roundel.
   const outer = Array.from({ length: 169 }, (_, i) => {
     const t = (i / 168) * TAU;
@@ -205,25 +205,9 @@ function bigFish() {
     return [50 + r * Math.cos(t), 50 + r * Math.sin(t)];
   });
   const inner = arc(50, 50, 39.5, TAU, 0, 90);
-  const cubic = (p0, p1, p2, p3, steps = 24) =>
-    Array.from({ length: steps + 1 }, (_, i) => {
-      const t = i / steps;
-      const u = 1 - t;
-      return [0, 1].map((k) => u ** 3 * p0[k] + 3 * u * u * t * p1[k] + 3 * u * t * t * p2[k] + t ** 3 * p3[k]);
-    });
-  // The body, nose left, tail right; the eye and the three lights are holes in it.
-  const body = [
-    ...cubic([17, 53], [20, 33], [51, 29], [73, 45.5]),
-    [86, 33.5],
-    [82, 50],
-    [86, 64],
-    ...cubic([73, 54.5], [51, 67], [23, 66], [17, 55]),
-  ];
-  const hole = (x, y, r) => arc(x, y, r, TAU, 0, 20);
-  const fin = [...cubic([44, 33.5], [47, 27], [52, 24.5], [56, 24]), ...cubic([56, 24], [55, 28], [56, 31], [59, 34.5])];
   const interior = (y) => Math.sqrt(Math.max(0, 39.5 ** 2 - (y - 50) ** 2));
   const band = (y0, amp, thick) => {
-    const w = interior(y0 + thick) + 1.2;
+    const w = Math.max(interior(y0), interior(y0 + thick)) + 1.2;
     const top = [], bottom = [];
     for (let x = 50 - w; x <= 50 + w + 0.01; x += 1) {
       const y = y0 + amp * Math.sin(((x - 50) / 15) * TAU);
@@ -232,15 +216,34 @@ function bigFish() {
     }
     return [...top, ...bottom];
   };
+  // The whirlpool: two turns, from a fine point at its heart to a full stroke at its mouth,
+  // which opens at the top.
+  const [cx, cy, r0, r1, turns, n] = [47, 61, 3, 22.5, 2, 220];
+  const pt = (k) => {
+    const a = -Math.PI / 2 - turns * TAU * (1 - k / n);
+    const r = r0 + ((r1 - r0) * k) / n;
+    return [cx + r * Math.cos(a), cy + r * Math.sin(a)];
+  };
+  const left = [], right = [];
+  for (let k = 0; k <= n; k++) {
+    const [x, y] = pt(k);
+    const [xa, ya] = pt(Math.max(0, k - 1)), [xb, yb] = pt(Math.min(n, k + 1));
+    const len = Math.hypot(xb - xa, yb - ya);
+    const w = (1.4 + 3.4 * Math.sqrt(k / n)) / 2;
+    left.push([x - ((yb - ya) / len) * w, y + ((xb - xa) / len) * w]);
+    right.unshift([x + ((yb - ya) / len) * w, y - ((xb - xa) / len) * w]);
+  }
+  const [ex, ey] = pt(n), [px, py] = pt(n - 1);
+  const heading = Math.atan2(ey - py, ex - px);
+  const mouth = arc(ex, ey, 2.4, heading + Math.PI / 2, heading - Math.PI / 2, 12).slice(1, -1);
   return [
     piece(outer, inner),
-    piece(body, hole(26.5, 47.5, 2.3), hole(44, 52.5, 2.3), hole(51.5, 51.5, 2.3), hole(59, 52.5, 2.3)),
-    piece(fin),
-    piece(band(71, 1.7, 4.4)),
-    piece(band(79, 1.4, 4.2)),
-    piece(arc(25, 27, 2.8, 0, TAU, 20)),
-    piece(arc(31, 20.5, 2, 0, TAU, 18)),
-    piece(arc(24, 17.5, 1.5, 0, TAU, 14)),
+    piece(band(21.5, 1.5, 4.6)),
+    piece([...left, ...mouth, ...right]),
+    // Three bubbles rising from its mouth: the three days and nights.
+    piece(arc(ex + 13, ey + 1, 2.8, 0, TAU, 20)),
+    piece(arc(ex + 20, ey - 5, 2.1, 0, TAU, 18)),
+    piece(arc(ex + 25.5, ey - 10.5, 1.6, 0, TAU, 14)),
   ];
 }
 
@@ -280,7 +283,7 @@ function emptyTomb() {
   return pieces;
 }
 
-const sets = { shepherd: shepherd(), ekklesia: ekklesia(), swallowed: bigFish(), "empty-tomb": emptyTomb() };
+const sets = { shepherd: shepherd(), ekklesia: ekklesia(), swallowed: swallowed(), "empty-tomb": emptyTomb() };
 const body = Object.entries(sets)
   .map(([name, list]) => {
     const sorted = [...list].sort((a, b) => b[3] * b[4] - a[3] * a[4]);
@@ -301,9 +304,10 @@ import type { ThemeName } from "./themes";
  *
  * Shepherd: the rod and the staff crossed (Psalm 23:4), a star over two bands of still water,
  * in a shield. Ekklesia: the chi-rho in a laurel wreath, in an octagon (the shape of the early
- * baptisteries), with tesserae at the corners. Swallowed: a great fish arching over the waves,
- * three lights in its belly for the three days, in a wave-edged roundel. Empty Tomb: the rising
- * sun's rays around a tomb in the hillside, its round stone rolled aside.
+ * baptisteries), with tesserae at the corners. Swallowed: the billows passing over and a
+ * whirlpool drawing down into the deep, three bubbles rising for the three days, in a
+ * wave-edged roundel. Empty Tomb: the rising sun's rays around a tomb in the hillside, its round
+ * stone rolled aside.
  */
 export const DRAWN_PIECES: Partial<Record<ThemeName, readonly EmblemPiece[]>> = {
 ${body}

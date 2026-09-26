@@ -23,7 +23,7 @@ Each theme is drawn from a part of the story:
 | **Unfinished Tower** | The Plain / Torchlight | Big Shoulders Display, Hanken Grotesk, Cardo | letters of every script scattering / lit terraces | laid course by course | a tower split down the middle, in a hexagon |
 | **Fallen Walls** | Seventh Day / Scarlet Cord | Rammetto One, Onest, Vollkorn | horn blasts, the seventh the strongest / campfires | the old wall falls flat | the wall, one side fallen |
 | **Shepherd**, the pasture | Green Pastures / The Fold | Bree Serif, Nunito, Gentium Book Plus | wool clouds drifting / a watch-fire under the stars | hills rise over the page | the crook and a sheep on the hills, in a shield |
-| **Swallowed**, the deep | Dry Land / The Depths | Fredoka, Lexend, Merriweather | surf lapping / glowing motes, bubbles, a vast shape passing | two jaws close, then open | a great fish over the waves, three lights in its belly |
+| **Swallowed**, the deep | Dry Land / The Depths | Fredoka, Lexend, Merriweather | surf lapping / glowing motes, bubbles, a vast shape passing | two jaws close, then open | a whirlpool under the waves, three bubbles rising |
 | **Furnace**, the fire | Seven Times / The Fourth Man | Grenze Gotisch, Onest, Vollkorn | tongues of flame and sparks / a hotter blaze | catches from the bottom | a figure standing in the flames |
 | **Good Wine**, the wedding | The Feast / The Good Wine | Bodoni Moda (italic), Jost, EB Garamond | water turning to wine / strings of lamps | doors open from the middle | two water jars, a drop becoming wine |
 | **Fishers of Men**, the lake | Daybreak / Night Watch | Young Serif, Albert Sans, Literata | sun glinting on water / boat lanterns | a ripple with a trailing ring | the fish over the net |

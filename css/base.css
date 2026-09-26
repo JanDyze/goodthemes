@@ -408,7 +408,7 @@
   --gt-idle: gt-lamp 3.4s ease-in-out;
 }
 
-/* Swallowed: pieces surface from below, rocking as they come up. Idle: swimming. */
+/* Swallowed: pieces surface from below, rocking as they come up. Idle: carried on the current. */
 [data-gt-emblem="swallowed"] {
   --gt-piece: gt-p-surface;
   --gt-stagger: 80ms;
