@@ -1,7 +1,7 @@
 /*
  * goodthemes/base.css
  *
- * What every theme shares. Theme files (exile.css, eden.css) only set variables;
+ * What every theme shares. Theme files (exile.css, first-garden.css) only set variables;
  * this file spends them. Everything here is scoped to :is(:root, [data-gt-scope])[data-theme], so an app
  * with no theme selected looks exactly as it did before.
  *
@@ -153,12 +153,12 @@
   display: none;
 }
 
-/* Eden and Galilee grow a circle from where you clicked; Zion grows a diamond from the center. */
-[data-gt-overlay]:is([data-gt-effect="eden"], [data-gt-effect="galilee"], [data-gt-effect="zion"]) {
+/* First Garden and Fishers of Men grow a circle from where you clicked; Pearl Gates grows a diamond from the center. */
+[data-gt-overlay]:is([data-gt-effect="first-garden"], [data-gt-effect="fishers-of-men"], [data-gt-effect="pearl-gates"]) {
   background: none;
 }
 
-[data-gt-overlay]:is([data-gt-effect="eden"], [data-gt-effect="galilee"], [data-gt-effect="zion"]) > [data-gt-shape] {
+[data-gt-overlay]:is([data-gt-effect="first-garden"], [data-gt-effect="fishers-of-men"], [data-gt-effect="pearl-gates"]) > [data-gt-shape] {
   display: block;
   position: absolute;
   border-radius: 50%;
@@ -166,7 +166,7 @@
   will-change: transform;
 }
 
-[data-gt-overlay][data-gt-effect="zion"] > [data-gt-shape] {
+[data-gt-overlay][data-gt-effect="pearl-gates"] > [data-gt-shape] {
   border-radius: 0;
 }
 
@@ -179,23 +179,23 @@
 }
 
 /*
- * Exile and Pentecost: a front crossing sideways, soft at both edges. The layer is
+ * Exile and Mighty Wind: a front crossing sideways, soft at both edges. The layer is
  * wider than the screen so it covers it completely while its soft edges are off-screen.
  */
-[data-gt-overlay]:is([data-gt-effect="exile"], [data-gt-effect="pentecost"]) {
+[data-gt-overlay]:is([data-gt-effect="exile"], [data-gt-effect="mighty-wind"]) {
   inset: 0 auto 0 -25vw;
   width: 150vw;
   mask-image: linear-gradient(90deg, transparent, #000 16.67%, #000 83.33%, transparent);
 }
 
-/* Deluge and Furnace rise, led by a crest: a wave for the water, tongues for the fire. */
-[data-gt-overlay]:is([data-gt-effect="deluge"], [data-gt-effect="furnace"], [data-gt-effect="shepherd"]) {
+/* Great Flood and Furnace rise, led by a crest: a wave for the water, tongues for the fire. */
+[data-gt-overlay]:is([data-gt-effect="great-flood"], [data-gt-effect="furnace"], [data-gt-effect="shepherd"]) {
   inset: -60px 0 auto 0;
   height: calc(100% + 60px);
   padding-top: 60px;
 }
 
-[data-gt-overlay][data-gt-effect="deluge"] {
+[data-gt-overlay][data-gt-effect="great-flood"] {
   mask:
     url("texture:wave.svg?c=000000") 0 12px / 240px 48px repeat-x,
     linear-gradient(#000, #000) 0 59px / 100% calc(100% - 59px) no-repeat;
@@ -234,12 +234,12 @@
   will-change: transform, opacity;
 }
 
-/* Big Fish: two jaws, each curved at its edge, meeting across the middle. */
-[data-gt-overlay][data-gt-effect="big-fish"] {
+/* Swallowed: two jaws, each curved at its edge, meeting across the middle. */
+[data-gt-overlay][data-gt-effect="swallowed"] {
   background: none;
 }
 
-[data-gt-overlay][data-gt-effect="big-fish"] > [data-gt-panel] {
+[data-gt-overlay][data-gt-effect="swallowed"] > [data-gt-panel] {
   display: block;
   position: absolute;
   inset-inline: 0;
@@ -248,12 +248,12 @@
   will-change: transform;
 }
 
-[data-gt-overlay][data-gt-effect="big-fish"] > [data-gt-panel="a"] {
+[data-gt-overlay][data-gt-effect="swallowed"] > [data-gt-panel="a"] {
   top: 0;
   border-radius: 0 0 50% 50% / 0 0 22% 22%;
 }
 
-[data-gt-overlay][data-gt-effect="big-fish"] > [data-gt-panel="b"] {
+[data-gt-overlay][data-gt-effect="swallowed"] > [data-gt-panel="b"] {
   bottom: 0;
   border-radius: 50% 50% 0 0 / 22% 22% 0 0;
 }
@@ -274,12 +274,12 @@
   will-change: transform;
 }
 
-/* Cana: two doors meeting in the middle, each with the invitation's gold edge. */
-[data-gt-overlay][data-gt-effect="cana"] {
+/* Good Wine: two doors meeting in the middle, each with the invitation's gold edge. */
+[data-gt-overlay][data-gt-effect="good-wine"] {
   background: none;
 }
 
-[data-gt-overlay][data-gt-effect="cana"] > [data-gt-panel] {
+[data-gt-overlay][data-gt-effect="good-wine"] > [data-gt-panel] {
   display: block;
   position: absolute;
   inset-block: 0;
@@ -290,12 +290,12 @@
 
 /* Each door is exactly half the screen, so they meet on the center line, under the sigil.
    Only the left door draws the gold edge, on its right side: that edge is the seam. */
-[data-gt-overlay][data-gt-effect="cana"] > [data-gt-panel="a"] {
+[data-gt-overlay][data-gt-effect="good-wine"] > [data-gt-panel="a"] {
   left: 0;
   box-shadow: inset -1px 0 0 var(--gt-frame, transparent);
 }
 
-[data-gt-overlay][data-gt-effect="cana"] > [data-gt-panel="b"] {
+[data-gt-overlay][data-gt-effect="good-wine"] > [data-gt-panel="b"] {
   left: 50%;
 }
 
@@ -356,8 +356,8 @@
   animation-play-state: running;
 }
 
-/* Eden: petals and seeds unfold one by one, around the flower. Idle: breathes. */
-[data-gt-emblem="eden"] {
+/* First Garden: petals and seeds unfold one by one, around the flower. Idle: breathes. */
+[data-gt-emblem="first-garden"] {
   --gt-piece: gt-p-unfold;
   --gt-piece-ease: cubic-bezier(0.3, 1.4, 0.4, 1);
   --gt-idle: gt-breathe 5s ease-in-out;
@@ -370,22 +370,22 @@
   --gt-idle: gt-sway 7s ease-in-out;
 }
 
-/* Deluge: pieces rise from the bottom and settle, like a swell. Idle: carried on the water. */
-[data-gt-emblem="deluge"] {
+/* Great Flood: pieces rise from the bottom and settle, like a swell. Idle: carried on the water. */
+[data-gt-emblem="great-flood"] {
   --gt-piece: gt-p-rise;
   --gt-idle: gt-bob 3.6s ease-in-out;
 }
 
-/* Babel: blocks drop into place, bottom to top. Idle: it leans, and rights itself. */
-[data-gt-emblem="babel"] {
+/* Unfinished Tower: blocks drop into place, bottom to top. Idle: it leans, and rights itself. */
+[data-gt-emblem="unfinished-tower"] {
   --gt-piece: gt-p-stack;
   --gt-stagger: 90ms;
   --gt-piece-ease: cubic-bezier(0.5, 0, 0.75, 0);
   --gt-idle: gt-lean 6s ease-in-out;
 }
 
-/* Jericho: stones fall in, around the wall, and land hard. Idle: every so often, the shout. */
-[data-gt-emblem="jericho"] {
+/* Fallen Walls: stones fall in, around the wall, and land hard. Idle: every so often, the shout. */
+[data-gt-emblem="fallen-walls"] {
   --gt-piece: gt-p-fall;
   --gt-stagger: 55ms;
   --gt-piece-ease: linear;
@@ -408,8 +408,8 @@
   --gt-idle: gt-lamp 3.4s ease-in-out;
 }
 
-/* Big Fish: pieces surface from below, rocking as they come up. Idle: swimming. */
-[data-gt-emblem="big-fish"] {
+/* Swallowed: pieces surface from below, rocking as they come up. Idle: swimming. */
+[data-gt-emblem="swallowed"] {
   --gt-piece: gt-p-surface;
   --gt-stagger: 80ms;
   --gt-piece-ease: linear;
@@ -425,9 +425,9 @@
   --gt-idle: gt-dawn 5s ease-in-out;
 }
 
-/* Furnace and Pentecost: flames kindle from their base, bottom to top. Idle: flame. */
+/* Furnace and Mighty Wind: flames kindle from their base, bottom to top. Idle: flame. */
 [data-gt-emblem="furnace"],
-[data-gt-emblem="pentecost"] {
+[data-gt-emblem="mighty-wind"] {
   --gt-piece: gt-p-kindle;
   --gt-piece-ease: linear;
   --gt-stagger: 70ms;
@@ -437,31 +437,31 @@
   --gt-idle: gt-flicker 1.9s ease-in-out;
 }
 
-[data-gt-emblem="pentecost"] {
+[data-gt-emblem="mighty-wind"] {
   --gt-idle: gt-flicker 2.4s ease-in-out;
 }
 
-[data-gt-emblem]:is([data-gt-emblem="furnace"], [data-gt-emblem="pentecost"]) > [data-gt-piece] {
+[data-gt-emblem]:is([data-gt-emblem="furnace"], [data-gt-emblem="mighty-wind"]) > [data-gt-piece] {
   transform-origin: 50% 100%;
 }
 
-/* Cana: the jars come in from the sides, the drops gather to the middle. Idle: brightening. */
-[data-gt-emblem="cana"] {
+/* Good Wine: the jars come in from the sides, the drops gather to the middle. Idle: brightening. */
+[data-gt-emblem="good-wine"] {
   --gt-piece: gt-p-converge;
   --gt-stagger: 120ms;
   --gt-idle: gt-glow 4.5s ease-in-out;
 }
 
-/* Galilee: pieces ripple out from the middle. Idle: a small boat on the lake. */
-[data-gt-emblem="galilee"] {
+/* Fishers of Men: pieces ripple out from the middle. Idle: a small boat on the lake. */
+[data-gt-emblem="fishers-of-men"] {
   --gt-piece: gt-p-ripple;
   --gt-stagger: 110ms;
   --gt-piece-ease: cubic-bezier(0.3, 1.3, 0.5, 1);
   --gt-idle: gt-rock 4.2s ease-in-out;
 }
 
-/* Zion: the city builds up from its base; the stars come down last. Idle: shimmer. */
-[data-gt-emblem="zion"] {
+/* Pearl Gates: the city builds up from its base; the stars come down last. Idle: shimmer. */
+[data-gt-emblem="pearl-gates"] {
   --gt-piece: gt-p-descend;
   --gt-stagger: 60ms;
   --gt-piece-ms: 820ms;

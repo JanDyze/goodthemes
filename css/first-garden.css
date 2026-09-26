@@ -1,5 +1,5 @@
 /*
- * goodthemes/eden.css — Eden
+ * goodthemes/first-garden.css — First Garden
  *
  * The garden. Morning: leaf-light, deep canopy green, pomegranate and fig, cards
  * cut like leaves, buttons with spring in them. Evening: the garden after dark,
@@ -8,7 +8,7 @@
  * Type: Caprasimo (display, ripe and round), Figtree (body), Gelasio (serif).
  */
 
-:is(:root, [data-gt-scope])[data-theme="eden"] {
+:is(:root, [data-gt-scope])[data-theme="first-garden"] {
   /* ---- shadcn contract: Morning ---- */
   --background: oklch(0.952 0.034 128);
   --foreground: oklch(0.255 0.052 155);
@@ -83,7 +83,7 @@
   --gt-press-scale: 0.95;
 }
 
-:is(:root, [data-gt-scope])[data-theme="eden"].dark {
+:is(:root, [data-gt-scope])[data-theme="first-garden"].dark {
   /* ---- shadcn contract: Evening ---- */
   --background: oklch(0.182 0.03 162);
   --foreground: oklch(0.93 0.032 125);

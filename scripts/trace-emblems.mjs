@@ -13,7 +13,7 @@ import Jimp from "jimp";
 import potrace from "potrace";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const NAMES = ["eden", "exile", "deluge", "babel", "jericho", "furnace", "cana", "galilee", "pentecost", "zion"];
+const NAMES = ["first-garden", "exile", "great-flood", "unfinished-tower", "fallen-walls", "furnace", "good-wine", "fishers-of-men", "mighty-wind", "pearl-gates"];
 const UNITS = 100; // every path is written on a 100 x 100 grid
 const UPSCALE = 3;
 
@@ -58,7 +58,7 @@ for (let start = 0; start < W * H; start++) {
 // Frames are the outermost tall shapes. Group them into rows (a new row starts wherever the
 // next frame begins below the current row's lowest edge), then read each row left to right.
 const tall = regions.filter((r) => r.n > 12 && r.y1 - r.y0 > H * 0.06);
-// Keep only outer frames: drop tall shapes that sit inside another's bounds (Eden's petals...).
+// Keep only outer frames: drop tall shapes that sit inside another's bounds (First Garden's petals...).
 const inside = (r, o) => o !== r && o.x0 <= r.x0 && o.x1 >= r.x1 && o.y0 <= r.y0 && o.y1 >= r.y1;
 const big = tall.filter((r) => !tall.some((o) => inside(r, o)));
 const rows = [];

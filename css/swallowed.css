@@ -1,5 +1,5 @@
 /*
- * goodthemes/big-fish.css — Big Fish
+ * goodthemes/swallowed.css — Swallowed
  *
  * "All thy billows and thy waves passed over me." Dry Land: the pale nacre of a shell,
  * fish-scale texture, deep-sea navy and coral. The Depths: the dark of the deep, lit by
@@ -8,7 +8,7 @@
  * Type: Fredoka (display, round and buoyant), Lexend (body), Merriweather (serif).
  */
 
-:is(:root, [data-gt-scope])[data-theme="big-fish"] {
+:is(:root, [data-gt-scope])[data-theme="swallowed"] {
   /* ---- shadcn contract: Dry Land ---- */
   --background: oklch(0.955 0.018 20);
   --foreground: oklch(0.24 0.04 245);
@@ -82,7 +82,7 @@
   --gt-press-scale: 0.96;
 }
 
-:is(:root, [data-gt-scope])[data-theme="big-fish"].dark {
+:is(:root, [data-gt-scope])[data-theme="swallowed"].dark {
   /* ---- shadcn contract: The Depths ---- */
   --background: oklch(0.155 0.035 252);
   --foreground: oklch(0.92 0.02 220);

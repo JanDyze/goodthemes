@@ -1,7 +1,7 @@
 /*
- * goodthemes/zion.css — Zion
+ * goodthemes/pearl-gates.css — Pearl Gates
  *
- * The new Jerusalem: gold "as it were transparent glass", gates of pearl, and
+ * The holy city: gold "as it were transparent glass", gates of pearl, and
  * twelve foundations of precious stone (the chart palette). The City: pearl and
  * gold on cut crystal. The Light Thereof: deep amethyst lit from within, because
  * "there shall be no night there".
@@ -10,7 +10,7 @@
  * Libre Caslon Text (serif).
  */
 
-:is(:root, [data-gt-scope])[data-theme="zion"] {
+:is(:root, [data-gt-scope])[data-theme="pearl-gates"] {
   /* ---- shadcn contract: The City ---- */
   --background: oklch(0.955 0.012 300);
   --foreground: oklch(0.24 0.04 290);
@@ -82,7 +82,7 @@
   --gt-card-inset: inset 0 1px 0 oklch(1 0 0 / 0.55);
 }
 
-:is(:root, [data-gt-scope])[data-theme="zion"].dark {
+:is(:root, [data-gt-scope])[data-theme="pearl-gates"].dark {
   /* ---- shadcn contract: The Light Thereof ---- */
   --background: oklch(0.2 0.055 300);
   --foreground: oklch(0.945 0.02 300);

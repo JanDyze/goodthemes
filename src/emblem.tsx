@@ -8,10 +8,10 @@ import type { ThemeName } from "./themes";
 // (each piece moving in turn, in the theme's manner) lives in base.css.
 
 export type EmblemAnimation =
-  /** The pieces come in one after another, in the theme's manner: Eden's petals unfold, Babel's
+  /** The pieces come in one after another, in the theme's manner: First Garden's petals unfold, Unfinished Tower's
    *  blocks stack, Furnace's flames kindle... Plays on mount; change the element's `key` to replay. */
   | "enter"
-  /** A slow loop in the theme's own manner: Eden breathes, Furnace flickers, Galilee rocks... */
+  /** A slow loop in the theme's own manner: First Garden breathes, Furnace flickers, Fishers of Men rocks... */
   | "idle"
   /** Enter, then idle. */
   | "enter-idle"
@@ -27,20 +27,20 @@ const leftRight: Order = ([, x]) => x;
 const centerOut: Order = ([, x, y]) => Math.hypot(x - 50, y - 50);
 const outsideIn: Order = ([, x, y]) => -Math.hypot(x - 50, y - 50);
 const ORDER: Record<ThemeName, Order> = {
-  eden: angle,
+  "first-garden": angle,
   exile: outsideIn,
-  deluge: bottomUp,
-  babel: bottomUp,
-  jericho: angle,
+  "great-flood": bottomUp,
+  "unfinished-tower": bottomUp,
+  "fallen-walls": angle,
   shepherd: bottomUp,
-  "big-fish": bottomUp,
+  swallowed: bottomUp,
   furnace: bottomUp,
-  cana: outsideIn,
-  galilee: centerOut,
+  "good-wine": outsideIn,
+  "fishers-of-men": centerOut,
   "empty-tomb": centerOut,
-  pentecost: bottomUp,
+  "mighty-wind": bottomUp,
   ekklesia: centerOut,
-  zion: bottomUp,
+  "pearl-gates": bottomUp,
 };
 
 // Traced sigils, with hand-drawn ones filling in for themes not on the artwork sheet yet.

@@ -195,7 +195,7 @@ function ekklesia() {
   return pieces;
 }
 
-/* ---- Big Fish: a great fish arching over the waves, three lights in its belly ---- */
+/* ---- Swallowed: a great fish arching over the waves, three lights in its belly ---- */
 
 function bigFish() {
   // A wave-edged roundel.
@@ -280,7 +280,7 @@ function emptyTomb() {
   return pieces;
 }
 
-const sets = { shepherd: shepherd(), ekklesia: ekklesia(), "big-fish": bigFish(), "empty-tomb": emptyTomb() };
+const sets = { shepherd: shepherd(), ekklesia: ekklesia(), swallowed: bigFish(), "empty-tomb": emptyTomb() };
 const body = Object.entries(sets)
   .map(([name, list]) => {
     const sorted = [...list].sort((a, b) => b[3] * b[4] - a[3] * a[4]);
@@ -301,7 +301,7 @@ import type { ThemeName } from "./themes";
  *
  * Shepherd: the rod and the staff crossed (Psalm 23:4), a star over two bands of still water,
  * in a shield. Ekklesia: the chi-rho in a laurel wreath, in an octagon (the shape of the early
- * baptisteries), with tesserae at the corners. Big Fish: a great fish arching over the waves,
+ * baptisteries), with tesserae at the corners. Swallowed: a great fish arching over the waves,
  * three lights in its belly for the three days, in a wave-edged roundel. Empty Tomb: the rising
  * sun's rays around a tomb in the hillside, its round stone rolled aside.
  */

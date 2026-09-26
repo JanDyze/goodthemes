@@ -1,5 +1,5 @@
 /*
- * goodthemes/cana.css — Cana
+ * goodthemes/good-wine.css — Good Wine
  *
  * The wedding where water became wine. The Feast: whitewashed stone like the six
  * waterpots, table linen, deep wine and wedding gold, cards framed like an
@@ -9,7 +9,7 @@
  * EB Garamond (serif).
  */
 
-:is(:root, [data-gt-scope])[data-theme="cana"] {
+:is(:root, [data-gt-scope])[data-theme="good-wine"] {
   /* ---- shadcn contract: The Feast ---- */
   --background: oklch(0.942 0.01 85);
   --foreground: oklch(0.25 0.04 10);
@@ -87,7 +87,7 @@
   --gt-card-footer-inset: 6px;
 }
 
-:is(:root, [data-gt-scope])[data-theme="cana"].dark {
+:is(:root, [data-gt-scope])[data-theme="good-wine"].dark {
   /* ---- shadcn contract: The Good Wine ---- */
   --background: oklch(0.172 0.034 355);
   --foreground: oklch(0.93 0.02 60);

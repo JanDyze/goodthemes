@@ -1,18 +1,18 @@
 export type ThemeName =
-  | "eden"
+  | "first-garden"
   | "exile"
-  | "deluge"
-  | "babel"
-  | "jericho"
+  | "great-flood"
+  | "unfinished-tower"
+  | "fallen-walls"
   | "shepherd"
-  | "big-fish"
+  | "swallowed"
   | "furnace"
-  | "cana"
-  | "galilee"
+  | "good-wine"
+  | "fishers-of-men"
   | "empty-tomb"
-  | "pentecost"
+  | "mighty-wind"
   | "ekklesia"
-  | "zion";
+  | "pearl-gates";
 export type Mode = "light" | "dark" | "system";
 export type ResolvedMode = "light" | "dark";
 export type AmbientScene = "sirocco" | "stars" | "petals" | "fireflies" | "downpour" | "storm" | "tongues" | "torches" | "wine" | "lamps"
@@ -47,9 +47,9 @@ export interface Inspiration {
 }
 
 export const themes: Record<ThemeName, ThemeInfo> = {
-  eden: {
-    id: "eden",
-    name: "Eden",
+  "first-garden": {
+    id: "first-garden",
+    name: "First Garden",
     tagline: "Leaf-light, fig and pomegranate. The garden in the morning, and after dark.",
     modes: { light: "Morning", dark: "Evening" },
     ambient: { light: "petals", dark: "fireflies" },
@@ -92,9 +92,9 @@ export const themes: Record<ThemeName, ThemeInfo> = {
       ],
     },
   },
-  deluge: {
-    id: "deluge",
-    name: "Deluge",
+  "great-flood": {
+    id: "great-flood",
+    name: "Great Flood",
     tagline: "Pitch, gopher wood and rising water. Forty days of rain, and the bow in the cloud.",
     modes: { light: "Forty Days", dark: "The Deep" },
     ambient: { light: "downpour", dark: "storm" },
@@ -114,11 +114,11 @@ export const themes: Record<ThemeName, ThemeInfo> = {
       ],
     },
   },
-  babel: {
-    id: "babel",
-    name: "Babel",
-    tagline: "Brick for stone and slime for mortar. A tower on the plain of Shinar, and every tongue.",
-    modes: { light: "Shinar", dark: "Torchlight" },
+  "unfinished-tower": {
+    id: "unfinished-tower",
+    name: "Unfinished Tower",
+    tagline: "Brick for stone and slime for mortar. A tower on the plain, and every tongue.",
+    modes: { light: "The Plain", dark: "Torchlight" },
     ambient: { light: "tongues", dark: "torches" },
     fonts: {
       display: "Big Shoulders Display",
@@ -132,14 +132,14 @@ export const themes: Record<ThemeName, ThemeInfo> = {
       reference: "Genesis 11:4",
       translation: "KJV",
       readings: [
-        { title: "The tower of Babel", passage: "Genesis 11:1-9" },
+        { title: "The tower left unfinished", passage: "Genesis 11:1-9" },
         { title: "Every tongue understood", passage: "Acts 2:1-13" },
       ],
     },
   },
-  jericho: {
-    id: "jericho",
-    name: "Jericho",
+  "fallen-walls": {
+    id: "fallen-walls",
+    name: "Fallen Walls",
     tagline: "The city of palm trees, its walls, and a scarlet cord in one window. Seven days around, and a shout.",
     modes: { light: "Seventh Day", dark: "Scarlet Cord" },
     ambient: { light: "shofar", dark: "camp" },
@@ -154,7 +154,7 @@ export const themes: Record<ThemeName, ThemeInfo> = {
       reference: "Hebrews 11:30",
       translation: "KJV",
       readings: [
-        { title: "The walls of Jericho", passage: "Joshua 6:1-27" },
+        { title: "The walls fall down", passage: "Joshua 6:1-27" },
         { title: "The scarlet cord", passage: "Joshua 2:1-21" },
       ],
     },
@@ -182,9 +182,9 @@ export const themes: Record<ThemeName, ThemeInfo> = {
       ],
     },
   },
-  "big-fish": {
-    id: "big-fish",
-    name: "Big Fish",
+  swallowed: {
+    id: "swallowed",
+    name: "Swallowed",
     tagline: "Billows and waves overhead, weeds about the head, three days in the dark of the deep, and then dry land.",
     modes: { light: "Dry Land", dark: "The Depths" },
     ambient: { light: "surf", dark: "depths" },
@@ -228,9 +228,9 @@ export const themes: Record<ThemeName, ThemeInfo> = {
       ],
     },
   },
-  cana: {
-    id: "cana",
-    name: "Cana",
+  "good-wine": {
+    id: "good-wine",
+    name: "Good Wine",
     tagline: "Six waterpots of stone, table linen and wedding gold. The feast, and the good wine kept until now.",
     modes: { light: "The Feast", dark: "The Good Wine" },
     ambient: { light: "wine", dark: "lamps" },
@@ -246,14 +246,14 @@ export const themes: Record<ThemeName, ThemeInfo> = {
       reference: "John 2:10",
       translation: "KJV",
       readings: [
-        { title: "The wedding at Cana", passage: "John 2:1-11" },
+        { title: "The wedding feast", passage: "John 2:1-11" },
         { title: "The marriage supper of the Lamb", passage: "Revelation 19:6-9" },
       ],
     },
   },
-  galilee: {
-    id: "galilee",
-    name: "Galilee",
+  "fishers-of-men": {
+    id: "fishers-of-men",
+    name: "Fishers of Men",
     tagline: "Nets drying on the shore, sun on the water, lanterns out all night. Follow me.",
     modes: { light: "Daybreak", dark: "Night Watch" },
     ambient: { light: "glints", dark: "lanterns" },
@@ -295,9 +295,9 @@ export const themes: Record<ThemeName, ThemeInfo> = {
       ],
     },
   },
-  pentecost: {
-    id: "pentecost",
-    name: "Pentecost",
+  "mighty-wind": {
+    id: "mighty-wind",
+    name: "Mighty Wind",
     tagline: "A sound from heaven as of a rushing mighty wind, and cloven tongues like as of fire.",
     modes: { light: "Rushing Wind", dark: "Tongues of Fire" },
     ambient: { light: "wind", dark: "tongues-of-fire" },
@@ -312,7 +312,7 @@ export const themes: Record<ThemeName, ThemeInfo> = {
       reference: "Acts 2:2",
       translation: "KJV",
       readings: [
-        { title: "The day of Pentecost", passage: "Acts 2:1-21" },
+        { title: "The day the wind came", passage: "Acts 2:1-21" },
         { title: "I will pour out my spirit", passage: "Joel 2:28-32" },
       ],
     },
@@ -340,9 +340,9 @@ export const themes: Record<ThemeName, ThemeInfo> = {
       ],
     },
   },
-  zion: {
-    id: "zion",
-    name: "Zion",
+  "pearl-gates": {
+    id: "pearl-gates",
+    name: "Pearl Gates",
     tagline: "Gates of pearl, a street of gold like transparent glass, twelve foundations, and no night there.",
     modes: { light: "The City", dark: "The Light Thereof" },
     ambient: { light: "prism", dark: "radiance" },

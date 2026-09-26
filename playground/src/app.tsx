@@ -169,7 +169,7 @@ const reasons = [
 ];
 
 // Three themes for the side-by-side proof, spread across the palette.
-const proofThemes: ThemeName[] = ["eden", "furnace", "zion"];
+const proofThemes: ThemeName[] = ["first-garden", "furnace", "pearl-gates"];
 
 function Why() {
   return (
@@ -787,9 +787,9 @@ const steps = [
 import { ThemeScript } from "goodthemes/script";
 
 <html suppressHydrationWarning>
-  <head><ThemeScript defaultTheme="eden" /></head>
+  <head><ThemeScript defaultTheme="first-garden" /></head>
   <body>
-    <ThemeProvider defaultTheme="eden" ambient>
+    <ThemeProvider defaultTheme="first-garden" ambient>
       {children}
     </ThemeProvider>
   </body>

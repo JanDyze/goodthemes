@@ -1,17 +1,17 @@
 /*
- * goodthemes/babel.css — Babel
+ * goodthemes/unfinished-tower.css — Unfinished Tower
  *
- * "Brick for stone, and slime had they for morter." Shinar: sun-dried mud brick
+ * "Brick for stone, and slime had they for morter." The Plain: sun-dried mud brick
  * in running bond, bitumen-black controls, and a band of glazed lapis along the
- * top of each card, like the friezes on a Babylonian gate. Torchlight: dark
+ * top of each card, like the friezes on an ancient city gate. Torchlight: dark
  * brick, torch-orange, the terraces lit one above another.
  *
  * Type: Big Shoulders Display (display, tall and stacked like a tower),
  * Hanken Grotesk (body), Cardo (serif, drawn for scholars of ancient texts).
  */
 
-:is(:root, [data-gt-scope])[data-theme="babel"] {
-  /* ---- shadcn contract: Shinar ---- */
+:is(:root, [data-gt-scope])[data-theme="unfinished-tower"] {
+  /* ---- shadcn contract: The Plain ---- */
   --background: oklch(0.905 0.03 42);
   --foreground: oklch(0.235 0.028 40);
   --card: oklch(0.948 0.02 55);
@@ -90,7 +90,7 @@
   --gt-primary-shadow: inset 0 -2px 0 oklch(0 0 0 / 0.3), 0 4px 10px -6px oklch(from var(--gt-shadow-color) l c h / 0.6);
 }
 
-:is(:root, [data-gt-scope])[data-theme="babel"].dark {
+:is(:root, [data-gt-scope])[data-theme="unfinished-tower"].dark {
   /* ---- shadcn contract: Torchlight ---- */
   --background: oklch(0.18 0.018 42);
   --foreground: oklch(0.925 0.024 70);

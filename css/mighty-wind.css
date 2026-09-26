@@ -1,5 +1,5 @@
 /*
- * goodthemes/pentecost.css — Pentecost
+ * goodthemes/mighty-wind.css — Mighty Wind
  *
  * "A rushing mighty wind", and "cloven tongues like as of fire". Rushing Wind:
  * cool plaster, streamlines of wind, liturgical red and flame gold. Tongues of
@@ -8,7 +8,7 @@
  * Type: Unbounded (display, wide and moving), Schibsted Grotesk (body), Petrona (serif).
  */
 
-:is(:root, [data-gt-scope])[data-theme="pentecost"] {
+:is(:root, [data-gt-scope])[data-theme="mighty-wind"] {
   /* ---- shadcn contract: Rushing Wind ---- */
   --background: oklch(0.95 0.008 250);
   --foreground: oklch(0.23 0.03 260);
@@ -79,7 +79,7 @@
   --gt-primary-shadow: 0 6px 18px -8px oklch(from var(--primary) l c h / 0.75);
 }
 
-:is(:root, [data-gt-scope])[data-theme="pentecost"].dark {
+:is(:root, [data-gt-scope])[data-theme="mighty-wind"].dark {
   /* ---- shadcn contract: Tongues of Fire ---- */
   --background: oklch(0.18 0.042 265);
   --foreground: oklch(0.93 0.015 250);

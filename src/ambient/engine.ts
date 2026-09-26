@@ -7,7 +7,7 @@ interface Env {
   h: number;
   /** --gt-ambient-1..3 from the active theme, resolved to RGB. */
   colors: readonly [RGB, RGB, RGB];
-  /** --chart-1..5 in rainbow order (Deluge charts are the bow in the cloud). */
+  /** --chart-1..5 in rainbow order (Great Flood charts are the bow in the cloud). */
   spectrum: readonly RGB[];
   density: number;
 }
@@ -150,7 +150,7 @@ function stars(env: Env): Scene {
   };
 }
 
-/* ---- Eden, Morning: blossom petals and the odd leaf, tumbling down ------------ */
+/* ---- First Garden, Morning: blossom petals and the odd leaf, tumbling down ------------ */
 
 function petals(env: Env): Scene {
   interface Petal {
@@ -220,7 +220,7 @@ function petals(env: Env): Scene {
   };
 }
 
-/* ---- Eden, Evening: fireflies wandering the dark, blinking on and off --------- */
+/* ---- First Garden, Evening: fireflies wandering the dark, blinking on and off --------- */
 
 function fireflies(env: Env): Scene {
   interface Fly { x: number; y: number; heading: number; speed: number; period: number; phase: number; size: number; seed: number; color: RGB }
@@ -272,7 +272,7 @@ function fireflies(env: Env): Scene {
   };
 }
 
-/* ---- Deluge: rain, shared by both modes ---------------------------------------- */
+/* ---- Great Flood: rain, shared by both modes ---------------------------------------- */
 
 interface Drop { x: number; y: number; len: number; speed: number; alpha: number }
 
@@ -312,7 +312,7 @@ function rainfall(env: Env, areaPer: number, max: number) {
   };
 }
 
-/* ---- Deluge, Forty Days: squalls of rain, rings on the water, the bow between -- */
+/* ---- Great Flood, Forty Days: squalls of rain, rings on the water, the bow between -- */
 
 function downpour(env: Env): Scene {
   const rain = rainfall(env, 5200, 240);
@@ -373,7 +373,7 @@ function downpour(env: Env): Scene {
   };
 }
 
-/* ---- Deluge, The Deep: steady rain at night, lightning far off ---------------- */
+/* ---- Great Flood, The Deep: steady rain at night, lightning far off ---------------- */
 
 function storm(env: Env): Scene {
   const rain = rainfall(env, 4400, 280);
@@ -399,7 +399,7 @@ function storm(env: Env): Scene {
   };
 }
 
-/* ---- Babel, Shinar: letters of every script, scattering outward ------------ */
+/* ---- Unfinished Tower, The Plain: letters of every script, scattering outward ------------ */
 
 // Glyphs from scripts with wide system-font coverage, so none render as empty boxes.
 const GLYPHS = [
@@ -460,7 +460,7 @@ function tongues(env: Env): Scene {
   };
 }
 
-/* ---- Babel, Torchlight: the terraces lit one above another ------------------- */
+/* ---- Unfinished Tower, Torchlight: the terraces lit one above another ------------------- */
 
 function torches(env: Env): Scene {
   interface Torch { x: number; y: number; phase: number; rate: number; size: number }
@@ -528,7 +528,7 @@ function torches(env: Env): Scene {
   };
 }
 
-/* ---- Cana, The Feast: water drawn out and turned to wine as it falls --------- */
+/* ---- Good Wine, The Feast: water drawn out and turned to wine as it falls --------- */
 
 function wine(env: Env): Scene {
   interface Drop { x: number; y: number; speed: number; size: number; sway: number; phase: number; turn: number }
@@ -589,7 +589,7 @@ function wine(env: Env): Scene {
   };
 }
 
-/* ---- Cana, The Good Wine: strings of lamps swaying over the feast ------------ */
+/* ---- Good Wine, The Good Wine: strings of lamps swaying over the feast ------------ */
 
 function lamps(env: Env): Scene {
   interface Garland { y: number; sag: number; phase: number; count: number }
@@ -664,7 +664,7 @@ function glow(ctx: CanvasRenderingContext2D, x: number, y: number, radius: numbe
   ctx.fill();
 }
 
-/* ---- Jericho, Seventh Day: the horns sound, and the seventh time the wall falls --- */
+/* ---- Fallen Walls, Seventh Day: the horns sound, and the seventh time the wall falls --- */
 
 function shofar(env: Env): Scene {
   interface Mote { x: number; y: number; vx: number; vy: number; size: number }
@@ -718,7 +718,7 @@ function shofar(env: Env): Scene {
   };
 }
 
-/* ---- Jericho, Scarlet Cord: the camp's fires ringing the city at night -------- */
+/* ---- Fallen Walls, Scarlet Cord: the camp's fires ringing the city at night -------- */
 
 function camp(env: Env): Scene {
   interface Fire { x: number; y: number; phase: number; size: number }
@@ -828,7 +828,7 @@ function fire(env: Env, heat: number): Scene {
 const blaze = (env: Env) => fire(env, 1);
 const inferno = (env: Env) => fire(env, 1.35);
 
-/* ---- Galilee, Daybreak: sun glinting on the lake ------------------------------ */
+/* ---- Fishers of Men, Daybreak: sun glinting on the lake ------------------------------ */
 
 function glints(env: Env): Scene {
   interface Glint { x: number; y: number; len: number; phase: number; rate: number }
@@ -858,7 +858,7 @@ function glints(env: Env): Scene {
   };
 }
 
-/* ---- Galilee, Night Watch: boat lanterns bobbing, their light on the water ------ */
+/* ---- Fishers of Men, Night Watch: boat lanterns bobbing, their light on the water ------ */
 
 function lanterns(env: Env): Scene {
   interface Boat { x: number; y: number; phase: number; drift: number; size: number }
@@ -898,7 +898,7 @@ function lanterns(env: Env): Scene {
   };
 }
 
-/* ---- Pentecost, Rushing Wind: long streamlines sweeping through --------------- */
+/* ---- Mighty Wind, Rushing Wind: long streamlines sweeping through --------------- */
 
 function wind(env: Env): Scene {
   interface Stream { x: number; y: number; speed: number; len: number; amp: number; freq: number; phase: number; alpha: number }
@@ -939,7 +939,7 @@ function wind(env: Env): Scene {
   };
 }
 
-/* ---- Pentecost, Tongues of Fire: cloven flames resting, flickering, going out -- */
+/* ---- Mighty Wind, Tongues of Fire: cloven flames resting, flickering, going out -- */
 
 function tonguesOfFire(env: Env): Scene {
   interface Flame { x: number; y: number; born: number; life: number; size: number; phase: number }
@@ -978,7 +978,7 @@ function tonguesOfFire(env: Env): Scene {
   };
 }
 
-/* ---- Zion: light glinting through gold and stone (and, by night, radiance) ----- */
+/* ---- Pearl Gates: light glinting through gold and stone (and, by night, radiance) ----- */
 
 function prism(env: Env, rays: boolean): Scene {
   interface Spark { x: number; y: number; born: number; life: number; size: number; color: RGB; turn: number }
@@ -1191,7 +1191,7 @@ function manyLights(env: Env): Scene {
   };
 }
 
-/* ---- Big Fish, Dry Land: surf lapping along the bottom of the page ------------ */
+/* ---- Swallowed, Dry Land: surf lapping along the bottom of the page ------------ */
 
 function surf(env: Env): Scene {
   interface Bubble { x: number; y: number; r: number; rise: number; phase: number }
@@ -1229,7 +1229,7 @@ function surf(env: Env): Scene {
   };
 }
 
-/* ---- Big Fish, The Depths: glowing motes, rising bubbles, and something vast ----- */
+/* ---- Swallowed, The Depths: glowing motes, rising bubbles, and something vast ----- */
 
 function depths(env: Env): Scene {
   interface Mote { x: number; y: number; vx: number; vy: number; phase: number; rate: number; size: number; color: RGB }
@@ -1427,7 +1427,7 @@ function readColors(): Env["colors"] {
 function readSpectrum(): RGB[] {
   const style = getComputedStyle(document.documentElement);
   const probe = document.createElement("canvas").getContext("2d", { willReadFrequently: true })!;
-  // Deluge's chart palette, reordered outside-in: red, amber, green, blue, violet.
+  // Great Flood's chart palette, reordered outside-in: red, amber, green, blue, violet.
   return [4, 2, 3, 1, 5]
     .map((n) => style.getPropertyValue(`--chart-${n}`).trim())
     .filter(Boolean)

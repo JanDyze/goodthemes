@@ -43,7 +43,7 @@ const fadeOut = (duration = 340): Step[] => [step("self", [{ opacity: 1 }, { opa
 
 const plans: Record<Effect, Plan> = {
   // A bloom from wherever you touched.
-  eden: {
+  "first-garden": {
     enter: () => [step("shape", [{ transform: "scale(0)" }, { transform: "scale(1)" }], 540, "cubic-bezier(0.3, 0.9, 0.3, 1)")],
     exit: () => fadeOut(360),
   },
@@ -53,17 +53,17 @@ const plans: Record<Effect, Plan> = {
     exit: () => [step("self", [{ transform: "translateX(0)" }, { transform: "translateX(100%)" }], 520, "cubic-bezier(0.6, 0, 0.4, 1)")],
   },
   // The water rises over everything, then goes down again.
-  deluge: {
+  "great-flood": {
     enter: () => [step("self", [{ transform: "translateY(100%)" }, { transform: "translateY(0)" }], 640, "cubic-bezier(0.45, 0.05, 0.3, 1)")],
     exit: () => [step("self", [{ transform: "translateY(0)" }, { transform: "translateY(100%)" }], 560, "cubic-bezier(0.55, 0, 0.45, 1)")],
   },
   // Laid course by course from the ground up.
-  babel: {
+  "unfinished-tower": {
     enter: () => [step("self", [{ transform: "translateY(100%)" }, { transform: "translateY(0)" }], 560, "steps(9, end)")],
     exit: () => fadeOut(340),
   },
   // The wall comes down over the old theme, then falls flat.
-  jericho: {
+  "fallen-walls": {
     enter: () => [step("self", [{ transform: "translateY(-100%)" }, { transform: "translateY(0)" }], 420, "cubic-bezier(0.7, 0, 0.84, 0)")],
     exit: () => [step("self", [{ transform: "translateY(0)" }, { transform: "translateY(100%)" }], 560, "cubic-bezier(0.55, 0, 1, 0.45)")],
   },
@@ -73,7 +73,7 @@ const plans: Record<Effect, Plan> = {
     exit: () => fadeOut(420),
   },
   // Swallowed: two jaws close from above and below, then open on the new theme.
-  "big-fish": {
+  swallowed: {
     enter: () => [
       step("a", [{ transform: "translateY(-100%)" }, { transform: "translateY(0)" }], 500, "cubic-bezier(0.6, 0, 0.4, 1)"),
       step("b", [{ transform: "translateY(100%)" }, { transform: "translateY(0)" }], 500, "cubic-bezier(0.6, 0, 0.4, 1)"),
@@ -90,7 +90,7 @@ const plans: Record<Effect, Plan> = {
     exit: () => [step("self", [{ opacity: 1, transform: "translateY(0)" }, { opacity: 0, transform: "translateY(-6%)" }], 380, "ease-in")],
   },
   // Two doors close on the old theme and open onto the feast.
-  cana: {
+  "good-wine": {
     enter: () => [
       step("a", [{ transform: "translateX(-100%)" }, { transform: "translateX(0)" }], 480, "cubic-bezier(0.4, 0, 0.1, 1)"),
       step("b", [{ transform: "translateX(100%)" }, { transform: "translateX(0)" }], 480, "cubic-bezier(0.4, 0, 0.1, 1)"),
@@ -102,7 +102,7 @@ const plans: Record<Effect, Plan> = {
     ],
   },
   // A ripple from where you touched the water, settling as it goes.
-  galilee: {
+  "fishers-of-men": {
     enter: () => [step("shape", [{ transform: "scale(0)" }, { transform: "scale(1)" }], 640, "cubic-bezier(0.25, 0.1, 0.25, 1)")],
     exit: () => [step("self", [{ opacity: 1, transform: "scale(1)" }, { opacity: 0, transform: "scale(1.03)" }], 420, "ease-in")],
   },
@@ -115,12 +115,12 @@ const plans: Record<Effect, Plan> = {
     ],
   },
   // A gust: in from one side, leaning into the wind, and out the other.
-  pentecost: {
+  "mighty-wind": {
     enter: () => [step("self", [{ transform: "translateX(-100%) skewX(-14deg)" }, { transform: "translateX(0) skewX(0deg)" }], 440, "cubic-bezier(0.16, 1, 0.3, 1)")],
     exit: () => [step("self", [{ transform: "translateX(0) skewX(0deg)" }, { transform: "translateX(100%) skewX(-14deg)" }], 400, "cubic-bezier(0.7, 0, 0.84, 0)")],
   },
   // The city opens like a cut gem.
-  zion: {
+  "pearl-gates": {
     enter: () => [step("shape", [{ transform: "rotate(45deg) scale(0)" }, { transform: "rotate(45deg) scale(1)" }], 580, "cubic-bezier(0.22, 1, 0.36, 1)")],
     exit: () => fadeOut(360),
   },
@@ -153,14 +153,14 @@ const plans: Record<Effect, Plan> = {
 
 /**
  * Sizes the overlay's shape for effects that grow one: a circle centered where the switch was
- * triggered, reaching the farthest corner (Eden, Galilee), or a diamond covering the screen
- * from its center (Zion). Growing a shape by transform stays on the compositor; animating
+ * triggered, reaching the farthest corner (First Garden, Fishers of Men), or a diamond covering the screen
+ * from its center (Pearl Gates). Growing a shape by transform stays on the compositor; animating
  * clip-path would not.
  */
 function placeShape(el: HTMLElement, effect: Effect, o: Origin) {
   const shape = el.querySelector<HTMLElement>("[data-gt-shape]");
   if (!shape) return;
-  const centered = effect === "zion" || effect === "empty-tomb";
+  const centered = effect === "pearl-gates" || effect === "empty-tomb";
   const size = centered ? Math.hypot(innerWidth, innerHeight) * 1.04 : o.reach * 2;
   const [cx, cy] = centered ? [innerWidth / 2, innerHeight / 2] : [o.x, o.y];
   Object.assign(shape.style, { width: `${size}px`, height: `${size}px`, left: `${cx - size / 2}px`, top: `${cy - size / 2}px` });

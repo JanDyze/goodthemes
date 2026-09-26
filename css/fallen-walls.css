@@ -1,5 +1,5 @@
 /*
- * goodthemes/jericho.css — Jericho
+ * goodthemes/fallen-walls.css — Fallen Walls
  *
  * The city of palm trees, and its walls. Seventh Day: dry palm-khaki and ivory,
  * dressed stone, and a scarlet cord for the one thing that matters. Scarlet Cord:
@@ -8,7 +8,7 @@
  * Type: Rammetto One (display, massive as a wall), Onest (body), Vollkorn (serif).
  */
 
-:is(:root, [data-gt-scope])[data-theme="jericho"] {
+:is(:root, [data-gt-scope])[data-theme="fallen-walls"] {
   /* ---- shadcn contract: Seventh Day ---- */
   --background: oklch(0.915 0.03 108);
   --foreground: oklch(0.24 0.035 120);
@@ -81,7 +81,7 @@
   --gt-control-tracking: 0.02em;
 }
 
-:is(:root, [data-gt-scope])[data-theme="jericho"].dark {
+:is(:root, [data-gt-scope])[data-theme="fallen-walls"].dark {
   /* ---- shadcn contract: Scarlet Cord ---- */
   --background: oklch(0.18 0.022 118);
   --foreground: oklch(0.925 0.02 95);

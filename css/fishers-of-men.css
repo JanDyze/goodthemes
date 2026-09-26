@@ -1,5 +1,5 @@
 /*
- * goodthemes/galilee.css — Galilee
+ * goodthemes/fishers-of-men.css — Fishers of Men
  *
  * The lake where the fishermen were called. Daybreak: pale jade water, the
  * mesh of a drying net, deep lake teal and a dawn-apricot accent. Night Watch:
@@ -8,7 +8,7 @@
  * Type: Young Serif (display, sturdy and warm), Albert Sans (body), Literata (serif).
  */
 
-:is(:root, [data-gt-scope])[data-theme="galilee"] {
+:is(:root, [data-gt-scope])[data-theme="fishers-of-men"] {
   /* ---- shadcn contract: Daybreak ---- */
   --background: oklch(0.93 0.026 185);
   --foreground: oklch(0.25 0.04 205);
@@ -76,7 +76,7 @@
   --gt-ambient-3: oklch(0.5 0.07 200);
 }
 
-:is(:root, [data-gt-scope])[data-theme="galilee"].dark {
+:is(:root, [data-gt-scope])[data-theme="fishers-of-men"].dark {
   /* ---- shadcn contract: Night Watch ---- */
   --background: oklch(0.185 0.032 200);
   --foreground: oklch(0.925 0.02 180);
