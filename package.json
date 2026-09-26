@@ -1,6 +1,6 @@
 {
   "name": "goodthemes",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Full-atmosphere themes for shadcn/Tailwind apps: palette, type, texture, motion and ambient effects.",
   "license": "MIT",
   "type": "module",
