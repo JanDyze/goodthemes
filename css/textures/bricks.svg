@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="36" viewBox="0 0 96 36">
+  <!-- Running bond: two courses of mud brick, the second offset by half a brick. -->
+  <g fill="none" stroke="{c}" stroke-opacity="{o}" stroke-width="1">
+    <path d="M0 17.5 H96 M0 35.5 H96"/>
+    <path d="M47.5 0 V17 M95.5 0 V17"/>
+    <path d="M23.5 18 V35 M71.5 18 V35"/>
+  </g>
+</svg>

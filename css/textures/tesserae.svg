@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <!-- A mosaic floor: slightly irregular tesserae in rows, the joints showing as fine lines. -->
+  <g fill="none" stroke="{c}" stroke-opacity="{o}" stroke-width="0.8">
+    <path d="M0 0.4 H60 M0 10.2 H60 M0 20.5 H60 M0 30.3 H60 M0 40.6 H60 M0 50.2 H60"/>
+    <path d="M0.4 0 V10 M11 0 V10 M20.5 0 V10 M31 0 V10 M40.5 0 V10 M51 0 V10"/>
+    <path d="M5.5 10 V20.5 M16 10 V20.5 M25.5 10 V20.5 M36 10 V20.5 M45.5 10 V20.5 M56 10 V20.5"/>
+    <path d="M0.4 20.5 V30.3 M10.5 20.5 V30.3 M21 20.5 V30.3 M30.5 20.5 V30.3 M41 20.5 V30.3 M50.5 20.5 V30.3"/>
+    <path d="M6 30.3 V40.6 M15.5 30.3 V40.6 M26 30.3 V40.6 M35.5 30.3 V40.6 M46 30.3 V40.6 M55.5 30.3 V40.6"/>
+    <path d="M0.4 40.6 V50.2 M11 40.6 V50.2 M20.5 40.6 V50.2 M31 40.6 V50.2 M40.5 40.6 V50.2 M51 40.6 V50.2"/>
+    <path d="M5.5 50.2 V60 M16 50.2 V60 M25.5 50.2 V60 M36 50.2 V60 M45.5 50.2 V60 M56 50.2 V60"/>
+  </g>
+</svg>

@@ -1,0 +1,633 @@
+/*
+ * goodthemes/base.css
+ *
+ * What every theme shares. Theme files (exile.css, eden.css) only set variables;
+ * this file spends them. Everything here is scoped to :is(:root, [data-gt-scope])[data-theme], so an app
+ * with no theme selected looks exactly as it did before.
+ *
+ * Decoration (texture, display headings, component touches) turns off with
+ * <html data-gt-decor="off">. Transitions turn off with prefers-reduced-motion.
+ */
+
+/* ---- Browser surfaces ------------------------------------------------------ */
+
+@layer base {
+  :is(:root, [data-gt-scope])[data-theme] {
+    color-scheme: light;
+    accent-color: var(--primary);
+    caret-color: var(--primary);
+    scrollbar-color: var(--gt-scrollbar) transparent;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :is(:root, [data-gt-scope])[data-theme].dark {
+    color-scheme: dark;
+  }
+
+  :is(:root, [data-gt-scope])[data-theme] ::selection {
+    background-color: var(--gt-selection);
+    color: var(--gt-selection-foreground);
+  }
+
+  /* Tailwind v4's reset leaves buttons with the default arrow cursor. */
+  :is(:root, [data-gt-scope])[data-theme] :where(button, [role="button"], [role="switch"], [role="tab"]):not(:disabled, [aria-disabled="true"]) {
+    cursor: pointer;
+  }
+
+  :is(:root, [data-gt-scope])[data-theme] :focus-visible {
+    outline-color: var(--ring);
+  }
+
+  :is(:root, [data-gt-scope])[data-theme] :where(a) {
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: from-font;
+  }
+
+  :is(:root, [data-gt-scope])[data-theme] :where(table, time, [data-slot="badge"]) {
+    font-variant-numeric: tabular-nums;
+  }
+
+  [data-gt-scope][data-theme] {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--gt-font-body);
+  }
+
+  [data-gt-scope][data-theme]:not([data-gt-decor="off"]) {
+    background-image: var(--gt-texture);
+    background-size: var(--gt-texture-size);
+  }
+
+  /* The ground: each theme's texture laid over the app's own background color. */
+  :root[data-theme]:not([data-gt-decor="off"]) body {
+    background-image: var(--gt-texture);
+    background-size: var(--gt-texture-size);
+  }
+}
+
+/*
+ * Display type. Deliberately unlayered: shadcn titles set their family with a
+ * utility class (font-heading), and a theme's display face has to win over it.
+ */
+:is(:root, [data-gt-scope])[data-theme]:not([data-gt-decor="off"]) :is(h1, h2, h3, [data-slot="card-title"], [data-slot="dialog-title"], [data-slot="sheet-title"]) {
+  font-family: var(--gt-font-display);
+  font-weight: var(--gt-display-weight, inherit);
+  letter-spacing: var(--gt-display-tracking, normal);
+  font-style: var(--gt-display-style, normal);
+}
+
+/* ---- Component touches ------------------------------------------------------
+ * Unlayered, so they win over the utility classes shadcn components are styled
+ * with. Each theme only sets variables (its card radius, inset line, button
+ * sheen...); these rules spend them. Variables resolve to the nearest theme, so
+ * a themed preview inside another theme takes only its own touches.
+ */
+
+:where(:is(:root, [data-gt-scope])[data-theme]:not([data-gt-decor="off"])) [data-slot="card"] {
+  /* Tailwind composes box-shadow from these, so the card keeps its ring. */
+  --tw-shadow: var(--gt-shadow, 0 0 #0000);
+  --tw-inset-shadow: var(--gt-card-inset, 0 0 #0000);
+  --tw-ring-color: var(--gt-card-ring, color-mix(in oklab, var(--foreground) 10%, transparent));
+  border-radius: var(--gt-card-radius, calc(var(--radius) * 1.4));
+  background-image: var(--gt-card-image, none);
+  background-size: var(--gt-card-image-size, 128px 128px);
+}
+
+:where(:is(:root, [data-gt-scope])[data-theme]:not([data-gt-decor="off"])) [data-slot="card-header"] {
+  border-radius: var(--gt-card-header-radius, calc(var(--radius) * 1.4) calc(var(--radius) * 1.4) 0 0);
+}
+
+:where(:is(:root, [data-gt-scope])[data-theme]:not([data-gt-decor="off"])) [data-slot="card-footer"] {
+  margin: 0 var(--gt-card-footer-inset, 0px) var(--gt-card-footer-inset, 0px);
+  border-radius: 0 0 max(0px, calc(var(--radius) * 1.4 - var(--gt-card-footer-inset, 0px)))
+    max(0px, calc(var(--radius) * 1.4 - var(--gt-card-footer-inset, 0px)));
+}
+
+:where(:is(:root, [data-gt-scope])[data-theme]:not([data-gt-decor="off"])) :is([data-slot="button"], [data-slot="badge"]) {
+  letter-spacing: var(--gt-control-tracking, normal);
+}
+
+:where(:is(:root, [data-gt-scope])[data-theme]:not([data-gt-decor="off"])) [data-slot="button"] {
+  transition-property: color, background-color, border-color, box-shadow, opacity, scale, translate;
+  transition-duration: var(--gt-duration, 150ms);
+  transition-timing-function: var(--gt-ease, ease);
+}
+
+:where(:is(:root, [data-gt-scope])[data-theme]:not([data-gt-decor="off"])) [data-slot="button"]:not(:disabled):active {
+  scale: var(--gt-press-scale, none);
+  transition-duration: 120ms;
+}
+
+:where(:is(:root, [data-gt-scope])[data-theme]:not([data-gt-decor="off"])) [data-slot="button"]:is(.bg-primary) {
+  background-image: var(--gt-primary-sheen, none);
+  --tw-shadow: var(--gt-primary-shadow, 0 0 #0000);
+  /* Same composition Tailwind uses, so focus rings still draw on top of the theme's shadow. */
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(:is(:root, [data-gt-scope])[data-theme]) [data-slot="button"]:not(:disabled):active {
+    scale: none;
+  }
+}
+
+/* ---- Theme switching --------------------------------------------------------
+ * The provider puts an overlay in the incoming theme over the page, swaps the
+ * theme underneath it, then takes it away (motion in src/overlay.ts). These rules
+ * give each theme's overlay its shape. Only this one layer ever animates.
+ */
+
+[data-gt-overlay] {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483600;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  background: var(--background);
+  contain: strict;
+  will-change: transform, opacity;
+}
+
+[data-gt-overlay] > :is([data-gt-panel], [data-gt-shape]) {
+  display: none;
+}
+
+/* Eden and Galilee grow a circle from where you clicked; Zion grows a diamond from the center. */
+[data-gt-overlay]:is([data-gt-effect="eden"], [data-gt-effect="galilee"], [data-gt-effect="zion"]) {
+  background: none;
+}
+
+[data-gt-overlay]:is([data-gt-effect="eden"], [data-gt-effect="galilee"], [data-gt-effect="zion"]) > [data-gt-shape] {
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  background: var(--background);
+  will-change: transform;
+}
+
+[data-gt-overlay][data-gt-effect="zion"] > [data-gt-shape] {
+  border-radius: 0;
+}
+
+[data-gt-overlay] > [data-gt-emblem] {
+  position: relative;
+  z-index: 1;
+  width: min(22vmin, 150px);
+  height: min(22vmin, 150px);
+  color: var(--primary);
+}
+
+/*
+ * Exile and Pentecost: a front crossing sideways, soft at both edges. The layer is
+ * wider than the screen so it covers it completely while its soft edges are off-screen.
+ */
+[data-gt-overlay]:is([data-gt-effect="exile"], [data-gt-effect="pentecost"]) {
+  inset: 0 auto 0 -25vw;
+  width: 150vw;
+  mask-image: linear-gradient(90deg, transparent, #000 16.67%, #000 83.33%, transparent);
+}
+
+/* Deluge and Furnace rise, led by a crest: a wave for the water, tongues for the fire. */
+[data-gt-overlay]:is([data-gt-effect="deluge"], [data-gt-effect="furnace"], [data-gt-effect="shepherd"]) {
+  inset: -60px 0 auto 0;
+  height: calc(100% + 60px);
+  padding-top: 60px;
+}
+
+[data-gt-overlay][data-gt-effect="deluge"] {
+  mask:
+    url("texture:wave.svg?c=000000") 0 12px / 240px 48px repeat-x,
+    linear-gradient(#000, #000) 0 59px / 100% calc(100% - 59px) no-repeat;
+}
+
+[data-gt-overlay][data-gt-effect="furnace"] {
+  mask:
+    url("texture:flame.svg?c=000000") 0 0 / 80px 60px repeat-x,
+    linear-gradient(#000, #000) 0 59px / 100% calc(100% - 59px) no-repeat;
+}
+
+/* Shepherd rises behind a line of hills. */
+[data-gt-overlay][data-gt-effect="shepherd"] {
+  mask:
+    url("texture:crest.svg?c=000000") 0 0 / 480px 60px repeat-x,
+    linear-gradient(#000, #000) 0 59px / 100% calc(100% - 59px) no-repeat;
+}
+
+/* Ekklesia: a grid of mosaic tiles that set down one by one over the page. */
+[data-gt-overlay] > [data-gt-tiles] {
+  display: none;
+}
+
+[data-gt-overlay][data-gt-effect="ekklesia"] {
+  background: none;
+}
+
+[data-gt-overlay][data-gt-effect="ekklesia"] > [data-gt-tiles] {
+  position: absolute;
+  inset: 0;
+  display: grid;
+}
+
+[data-gt-overlay] [data-gt-tile] {
+  background: var(--background);
+  will-change: transform, opacity;
+}
+
+/* Big Fish: two jaws, each curved at its edge, meeting across the middle. */
+[data-gt-overlay][data-gt-effect="big-fish"] {
+  background: none;
+}
+
+[data-gt-overlay][data-gt-effect="big-fish"] > [data-gt-panel] {
+  display: block;
+  position: absolute;
+  inset-inline: 0;
+  height: 68%;
+  background: var(--background);
+  will-change: transform;
+}
+
+[data-gt-overlay][data-gt-effect="big-fish"] > [data-gt-panel="a"] {
+  top: 0;
+  border-radius: 0 0 50% 50% / 0 0 22% 22%;
+}
+
+[data-gt-overlay][data-gt-effect="big-fish"] > [data-gt-panel="b"] {
+  bottom: 0;
+  border-radius: 50% 50% 0 0 / 22% 22% 0 0;
+}
+
+/* Empty Tomb: a great round stone, carved so its rolling shows. */
+[data-gt-overlay][data-gt-effect="empty-tomb"] {
+  background: none;
+}
+
+[data-gt-overlay][data-gt-effect="empty-tomb"] > [data-gt-shape] {
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  background:
+    repeating-conic-gradient(from 10deg, oklch(from var(--foreground) l c h / 0.07) 0deg 1.4deg, transparent 1.4deg 24deg),
+    radial-gradient(circle, transparent 38%, oklch(from var(--foreground) l c h / 0.06) 38.4%, transparent 39.2%),
+    var(--background);
+  will-change: transform;
+}
+
+/* Cana: two doors meeting in the middle, each with the invitation's gold edge. */
+[data-gt-overlay][data-gt-effect="cana"] {
+  background: none;
+}
+
+[data-gt-overlay][data-gt-effect="cana"] > [data-gt-panel] {
+  display: block;
+  position: absolute;
+  inset-block: 0;
+  width: 50%;
+  background: var(--background);
+  will-change: transform;
+}
+
+/* Each door is exactly half the screen, so they meet on the center line, under the sigil.
+   Only the left door draws the gold edge, on its right side: that edge is the seam. */
+[data-gt-overlay][data-gt-effect="cana"] > [data-gt-panel="a"] {
+  left: 0;
+  box-shadow: inset -1px 0 0 var(--gt-frame, transparent);
+}
+
+[data-gt-overlay][data-gt-effect="cana"] > [data-gt-panel="b"] {
+  left: 50%;
+}
+
+/* ---- Sigil motion ---------------------------------------------------------------
+ * <ThemeEmblem animate="enter | idle | enter-idle | hover">. On enter, the sigil's pieces
+ * come in one after another in the theme's manner (the component gives each piece its turn
+ * and its direction from the center as --i, --dx, --dy). Then the whole mark idles in the
+ * theme's manner. Inside the SVG, 1px is one unit of the sigil's 100-unit grid.
+ */
+
+[data-gt-emblem] {
+  --gt-stagger: 65ms;
+  --gt-piece-ms: 640ms;
+  --gt-enter-delay: 0ms;
+  transform-origin: 50% 50%;
+}
+
+/* In a switch the sigil has well under a second on screen. */
+[data-gt-overlay] > [data-gt-emblem] {
+  --gt-stagger: 32ms;
+  --gt-piece-ms: 380ms;
+  --gt-enter-delay: 120ms;
+}
+
+[data-gt-emblem]:is([data-gt-animate="enter"], [data-gt-animate="enter-idle"]) > [data-gt-piece] {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation-name: var(--gt-piece);
+  animation-duration: var(--gt-piece-ms);
+  animation-timing-function: var(--gt-piece-ease, cubic-bezier(0.2, 0.8, 0.2, 1));
+  animation-delay: calc(var(--gt-enter-delay) + var(--i) * var(--gt-stagger));
+  animation-fill-mode: both;
+}
+
+/* The frame always leads, the same way for every theme. */
+[data-gt-emblem]:is([data-gt-animate="enter"], [data-gt-animate="enter-idle"]) > [data-gt-piece="frame"] {
+  animation-name: gt-p-frame;
+  animation-timing-function: cubic-bezier(0.3, 0.9, 0.3, 1);
+}
+
+/* Once every piece is in, the whole mark idles. */
+[data-gt-emblem][data-gt-animate="enter-idle"] {
+  animation: var(--gt-idle) infinite;
+  animation-delay: calc(var(--gt-enter-delay) + var(--gt-n) * var(--gt-stagger) + var(--gt-piece-ms));
+}
+
+[data-gt-emblem][data-gt-animate="idle"] {
+  animation: var(--gt-idle) infinite;
+}
+
+[data-gt-emblem][data-gt-animate="hover"] {
+  animation: var(--gt-idle) infinite;
+  animation-play-state: paused;
+}
+
+:is(a, button, [role="button"]):is(:hover, :focus-visible) [data-gt-emblem][data-gt-animate="hover"],
+[data-gt-emblem][data-gt-animate="hover"]:hover {
+  animation-play-state: running;
+}
+
+/* Eden: petals and seeds unfold one by one, around the flower. Idle: breathes. */
+[data-gt-emblem="eden"] {
+  --gt-piece: gt-p-unfold;
+  --gt-piece-ease: cubic-bezier(0.3, 1.4, 0.4, 1);
+  --gt-idle: gt-breathe 5s ease-in-out;
+}
+
+/* Exile: the scattered pieces come in from outside and find their places. Idle: never settled. */
+[data-gt-emblem="exile"] {
+  --gt-piece: gt-p-gather;
+  --gt-stagger: 110ms;
+  --gt-idle: gt-sway 7s ease-in-out;
+}
+
+/* Deluge: pieces rise from the bottom and settle, like a swell. Idle: carried on the water. */
+[data-gt-emblem="deluge"] {
+  --gt-piece: gt-p-rise;
+  --gt-idle: gt-bob 3.6s ease-in-out;
+}
+
+/* Babel: blocks drop into place, bottom to top. Idle: it leans, and rights itself. */
+[data-gt-emblem="babel"] {
+  --gt-piece: gt-p-stack;
+  --gt-stagger: 90ms;
+  --gt-piece-ease: cubic-bezier(0.5, 0, 0.75, 0);
+  --gt-idle: gt-lean 6s ease-in-out;
+}
+
+/* Jericho: stones fall in, around the wall, and land hard. Idle: every so often, the shout. */
+[data-gt-emblem="jericho"] {
+  --gt-piece: gt-p-fall;
+  --gt-stagger: 55ms;
+  --gt-piece-ease: linear;
+  --gt-idle: gt-tremor 5s linear;
+}
+
+/* Shepherd: the pieces hop in left to right, like the flock walking in. Idle: grazing. */
+[data-gt-emblem="shepherd"] {
+  --gt-piece: gt-p-hop;
+  --gt-stagger: 90ms;
+  --gt-piece-ease: linear;
+  --gt-idle: gt-graze 5.5s ease-in-out;
+}
+
+/* Ekklesia: set piece by piece from the center, like tesserae. Idle: lamplight. */
+[data-gt-emblem="ekklesia"] {
+  --gt-piece: gt-p-tessera;
+  --gt-stagger: 85ms;
+  --gt-piece-ease: cubic-bezier(0.3, 1.2, 0.5, 1);
+  --gt-idle: gt-lamp 3.4s ease-in-out;
+}
+
+/* Big Fish: pieces surface from below, rocking as they come up. Idle: swimming. */
+[data-gt-emblem="big-fish"] {
+  --gt-piece: gt-p-surface;
+  --gt-stagger: 80ms;
+  --gt-piece-ease: linear;
+  --gt-idle: gt-swim 4.8s ease-in-out;
+}
+
+/* Empty Tomb: the light comes up piece by piece from the center. Idle: dawn brightening. */
+[data-gt-emblem="empty-tomb"] {
+  --gt-piece: gt-p-dawn;
+  --gt-stagger: 45ms;
+  --gt-piece-ms: 720ms;
+  --gt-piece-ease: cubic-bezier(0.5, 0, 0.2, 1);
+  --gt-idle: gt-dawn 5s ease-in-out;
+}
+
+/* Furnace and Pentecost: flames kindle from their base, bottom to top. Idle: flame. */
+[data-gt-emblem="furnace"],
+[data-gt-emblem="pentecost"] {
+  --gt-piece: gt-p-kindle;
+  --gt-piece-ease: linear;
+  --gt-stagger: 70ms;
+}
+
+[data-gt-emblem="furnace"] {
+  --gt-idle: gt-flicker 1.9s ease-in-out;
+}
+
+[data-gt-emblem="pentecost"] {
+  --gt-idle: gt-flicker 2.4s ease-in-out;
+}
+
+[data-gt-emblem]:is([data-gt-emblem="furnace"], [data-gt-emblem="pentecost"]) > [data-gt-piece] {
+  transform-origin: 50% 100%;
+}
+
+/* Cana: the jars come in from the sides, the drops gather to the middle. Idle: brightening. */
+[data-gt-emblem="cana"] {
+  --gt-piece: gt-p-converge;
+  --gt-stagger: 120ms;
+  --gt-idle: gt-glow 4.5s ease-in-out;
+}
+
+/* Galilee: pieces ripple out from the middle. Idle: a small boat on the lake. */
+[data-gt-emblem="galilee"] {
+  --gt-piece: gt-p-ripple;
+  --gt-stagger: 110ms;
+  --gt-piece-ease: cubic-bezier(0.3, 1.3, 0.5, 1);
+  --gt-idle: gt-rock 4.2s ease-in-out;
+}
+
+/* Zion: the city builds up from its base; the stars come down last. Idle: shimmer. */
+[data-gt-emblem="zion"] {
+  --gt-piece: gt-p-descend;
+  --gt-stagger: 60ms;
+  --gt-piece-ms: 820ms;
+  --gt-piece-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --gt-idle: gt-shimmer 3.2s ease-in-out;
+}
+
+/* ---- Piece entrances ---- */
+
+@keyframes gt-p-frame {
+  from { opacity: 0; transform: scale(0.82); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes gt-p-unfold {
+  from { opacity: 0; transform: scale(0) rotate(-90deg); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes gt-p-gather {
+  from { opacity: 0; transform: translate(calc(var(--dx) * 40px), calc(var(--dy) * 40px)) rotate(calc(var(--dx) * -40deg)); }
+  70% { opacity: 1; }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes gt-p-rise {
+  from { opacity: 0; transform: translateY(16px) scaleY(0.7); }
+  65% { opacity: 1; transform: translateY(-2px) scaleY(1.04); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes gt-p-stack {
+  from { opacity: 0; transform: translateY(-26px); }
+  30% { opacity: 1; }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes gt-p-fall {
+  0% { opacity: 0; transform: translateY(-24px) rotate(14deg); animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45); }
+  55% { opacity: 1; transform: none; animation-timing-function: ease-out; }
+  70% { transform: translateY(-2.5px) rotate(-2deg); animation-timing-function: ease-in; }
+  85%, 100% { opacity: 1; transform: none; }
+}
+
+@keyframes gt-p-kindle {
+  0% { opacity: 0; transform: scale(0.6, 0); }
+  45% { opacity: 1; transform: scale(1.05, 1.18); }
+  62% { opacity: 0.75; transform: scale(0.97, 0.94); }
+  78% { opacity: 1; transform: scale(1.01, 1.05); }
+  100% { opacity: 1; transform: none; }
+}
+
+@keyframes gt-p-converge {
+  from { opacity: 0; transform: translate(calc(var(--dx) * 34px), calc(var(--dy) * -18px)); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes gt-p-ripple {
+  from { opacity: 0; transform: scale(0.35); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes gt-p-hop {
+  0% { opacity: 0; transform: translateY(12px); animation-timing-function: cubic-bezier(0.2, 0.7, 0.4, 1); }
+  50% { opacity: 1; transform: translateY(-4px); animation-timing-function: cubic-bezier(0.5, 0, 0.8, 0.4); }
+  72% { transform: translateY(0.5px); }
+  86% { transform: translateY(-1px); }
+  100% { opacity: 1; transform: none; }
+}
+
+@keyframes gt-p-tessera {
+  from { opacity: 0; transform: scale(0) rotate(45deg); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes gt-p-surface {
+  0% { opacity: 0; transform: translateY(14px) rotate(-8deg); animation-timing-function: cubic-bezier(0.2, 0.7, 0.4, 1); }
+  60% { opacity: 1; transform: translateY(-2px) rotate(2deg); animation-timing-function: ease-in-out; }
+  100% { opacity: 1; transform: none; }
+}
+
+@keyframes gt-p-dawn {
+  from { opacity: 0; transform: translateY(6px) scale(0.92); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes gt-p-descend {
+  from { opacity: 0; transform: translateY(-18px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---- Idle loops (the whole mark) ---- */
+
+@keyframes gt-graze {
+  30% { transform: rotate(-2.5deg) translateY(1%); }
+  60% { transform: rotate(1deg) translateY(-0.5%); }
+}
+
+@keyframes gt-lamp {
+  0%, 100% { opacity: 1; }
+  38% { opacity: 0.84; }
+  52% { opacity: 1; }
+  70% { opacity: 0.9; }
+}
+
+@keyframes gt-swim {
+  25% { transform: translateX(-1.5%) rotate(-2deg); }
+  75% { transform: translateX(1.5%) rotate(2deg); }
+}
+
+@keyframes gt-dawn {
+  50% { opacity: 0.86; transform: scale(1.03); }
+}
+
+@keyframes gt-breathe {
+  50% { transform: scale(1.045); }
+}
+
+@keyframes gt-sway {
+  25% { transform: rotate(-3deg) translateX(-1.5%); }
+  75% { transform: rotate(2.5deg) translateX(1.5%); }
+}
+
+@keyframes gt-bob {
+  50% { transform: translateY(-4%); }
+}
+
+@keyframes gt-lean {
+  40%, 55% { transform: rotate(4deg) skewX(-2deg); }
+}
+
+@keyframes gt-tremor {
+  0%, 84%, 100% { transform: none; }
+  86% { transform: translate(-2%, 1%) rotate(-1.5deg); }
+  88% { transform: translate(2%, -1%) rotate(1.5deg); }
+  90% { transform: translate(-1.5%, 0) rotate(-1deg); }
+  92% { transform: translate(1%, 1%) rotate(0.5deg); }
+  94% { transform: none; }
+}
+
+@keyframes gt-flicker {
+  0%, 100% { transform: scale(1, 1); opacity: 1; }
+  20% { transform: scale(0.98, 1.035); opacity: 0.92; }
+  45% { transform: scale(1.01, 0.99); opacity: 1; }
+  70% { transform: scale(0.985, 1.045) translateY(-1%); opacity: 0.88; }
+}
+
+@keyframes gt-glow {
+  50% { opacity: 0.72; transform: scale(1.025); }
+}
+
+@keyframes gt-rock {
+  25% { transform: rotate(-4deg) translateY(-2%); }
+  75% { transform: rotate(4deg) translateY(1%); }
+}
+
+@keyframes gt-shimmer {
+  0%, 100% { opacity: 1; }
+  30% { opacity: 0.7; }
+  45% { opacity: 1; }
+  60% { opacity: 0.82; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-gt-emblem],
+  [data-gt-emblem] > [data-gt-piece] {
+    animation: none !important;
+  }
+}

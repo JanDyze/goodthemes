@@ -1,0 +1,144 @@
+/*
+ * goodthemes/babel.css — Babel
+ *
+ * "Brick for stone, and slime had they for morter." Shinar: sun-dried mud brick
+ * in running bond, bitumen-black controls, and a band of glazed lapis along the
+ * top of each card, like the friezes on a Babylonian gate. Torchlight: dark
+ * brick, torch-orange, the terraces lit one above another.
+ *
+ * Type: Big Shoulders Display (display, tall and stacked like a tower),
+ * Hanken Grotesk (body), Cardo (serif, drawn for scholars of ancient texts).
+ */
+
+:is(:root, [data-gt-scope])[data-theme="babel"] {
+  /* ---- shadcn contract: Shinar ---- */
+  --background: oklch(0.905 0.03 42);
+  --foreground: oklch(0.235 0.028 40);
+  --card: oklch(0.948 0.02 55);
+  --card-foreground: oklch(0.235 0.028 40);
+  --popover: oklch(0.962 0.016 55);
+  --popover-foreground: oklch(0.235 0.028 40);
+  --primary: oklch(0.255 0.022 45);
+  --primary-foreground: oklch(0.955 0.018 60);
+  --secondary: oklch(0.85 0.048 40);
+  --secondary-foreground: oklch(0.32 0.075 36);
+  --muted: oklch(0.875 0.03 42);
+  --muted-foreground: oklch(0.45 0.04 40);
+  --accent: oklch(0.885 0.05 232);
+  --accent-foreground: oklch(0.34 0.1 245);
+  --destructive: oklch(0.52 0.19 27);
+  --border: oklch(0.8 0.035 42);
+  --input: oklch(0.77 0.04 42);
+  --ring: oklch(0.5 0.13 245);
+  --chart-1: oklch(0.47 0.13 250);
+  --chart-2: oklch(0.58 0.14 36);
+  --chart-3: oklch(0.78 0.13 85);
+  --chart-4: oklch(0.64 0.1 200);
+  --chart-5: oklch(0.36 0.03 45);
+  --radius: 0.15rem;
+  --sidebar: oklch(0.885 0.032 42);
+  --sidebar-foreground: oklch(0.235 0.028 40);
+  --sidebar-primary: oklch(0.255 0.022 45);
+  --sidebar-primary-foreground: oklch(0.955 0.018 60);
+  --sidebar-accent: oklch(0.885 0.05 232);
+  --sidebar-accent-foreground: oklch(0.34 0.1 245);
+  --sidebar-border: oklch(0.8 0.035 42);
+  --sidebar-ring: oklch(0.5 0.13 245);
+
+  /* ---- type ---- */
+  --gt-font-display: "Big Shoulders Display", "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --gt-font-body: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --gt-font-serif: "Cardo", ui-serif, Georgia, serif;
+  --gt-display-weight: 800;
+  --gt-display-tracking: 0.01em;
+  --font-sans: var(--gt-font-body);
+  --font-heading: var(--gt-font-display);
+  --font-serif: var(--gt-font-serif);
+
+  /* ---- surface ---- */
+  --gt-texture:
+    url("texture:grain.svg?c=6b3f26&o=0.4"),
+    url("texture:bricks.svg?c=7a4a30&o=0.13");
+  --gt-texture-size: 128px 128px, 96px 36px;
+  --gt-card-texture: url("texture:grain.svg?c=6b3f26&o=0.2");
+  /* The glazed band: lapis on the plain, turquoise under torchlight. */
+  --gt-glaze: oklch(0.47 0.13 250);
+  /* Mass: brick sits heavy, so its shadow is short and dense. */
+  --gt-shadow-color: oklch(0.35 0.05 40);
+  --gt-shadow:
+    0 1px 1px oklch(from var(--gt-shadow-color) l c h / 0.12),
+    0 8px 16px -10px oklch(from var(--gt-shadow-color) l c h / 0.5);
+
+  /* ---- motion: laid in place, one course at a time ---- */
+  --gt-ease: cubic-bezier(0.7, 0, 0.3, 1);
+  --gt-duration: 200ms;
+
+  /* ---- browser surfaces ---- */
+  --gt-selection: oklch(0.47 0.13 250 / 0.9);
+  --gt-selection-foreground: oklch(0.97 0.01 240);
+  --gt-scrollbar: oklch(0.68 0.05 40);
+
+  /* ---- ambient (read by <Ambient />) ---- */
+  --gt-ambient-1: oklch(0.42 0.1 250);
+  --gt-ambient-2: oklch(0.5 0.12 38);
+  --gt-ambient-3: oklch(0.36 0.03 45);
+
+  /* ---- touches: a glazed band along each card's top, controls stamped wide ---- */
+  --gt-card-inset: inset 0 3px 0 var(--gt-glaze);
+  --gt-card-image: var(--gt-card-texture);
+  --gt-control-tracking: 0.03em;
+  --gt-primary-shadow: inset 0 -2px 0 oklch(0 0 0 / 0.3), 0 4px 10px -6px oklch(from var(--gt-shadow-color) l c h / 0.6);
+}
+
+:is(:root, [data-gt-scope])[data-theme="babel"].dark {
+  /* ---- shadcn contract: Torchlight ---- */
+  --background: oklch(0.18 0.018 42);
+  --foreground: oklch(0.925 0.024 70);
+  --card: oklch(0.232 0.026 38);
+  --card-foreground: oklch(0.925 0.024 70);
+  --popover: oklch(0.25 0.028 38);
+  --popover-foreground: oklch(0.925 0.024 70);
+  --primary: oklch(0.76 0.155 55);
+  --primary-foreground: oklch(0.2 0.03 40);
+  --secondary: oklch(0.28 0.03 40);
+  --secondary-foreground: oklch(0.925 0.024 70);
+  --muted: oklch(0.265 0.026 40);
+  --muted-foreground: oklch(0.74 0.035 60);
+  --accent: oklch(0.32 0.07 238);
+  --accent-foreground: oklch(0.9 0.05 225);
+  --destructive: oklch(0.69 0.17 28);
+  --border: oklch(0.925 0.024 70 / 0.12);
+  --input: oklch(0.925 0.024 70 / 0.17);
+  --ring: oklch(0.76 0.155 55 / 0.6);
+  --chart-1: oklch(0.76 0.155 55);
+  --chart-2: oklch(0.7 0.11 225);
+  --chart-3: oklch(0.82 0.12 88);
+  --chart-4: oklch(0.66 0.14 32);
+  --chart-5: oklch(0.72 0.08 195);
+  --sidebar: oklch(0.205 0.022 40);
+  --sidebar-foreground: oklch(0.925 0.024 70);
+  --sidebar-primary: oklch(0.76 0.155 55);
+  --sidebar-primary-foreground: oklch(0.2 0.03 40);
+  --sidebar-accent: oklch(0.28 0.03 40);
+  --sidebar-accent-foreground: oklch(0.925 0.024 70);
+  --sidebar-border: oklch(0.925 0.024 70 / 0.11);
+  --sidebar-ring: oklch(0.76 0.155 55 / 0.6);
+
+  --gt-texture:
+    url("texture:grain.svg?c=e8c9a0&o=0.14"),
+    url("texture:bricks.svg?c=e8c9a0&o=0.05");
+  --gt-card-texture: url("texture:grain.svg?c=e8c9a0&o=0.07");
+  --gt-glaze: oklch(0.66 0.11 210);
+  --gt-shadow-color: oklch(0.07 0.02 40);
+  --gt-shadow:
+    0 1px 1px oklch(from var(--gt-shadow-color) l c h / 0.45),
+    0 10px 20px -10px oklch(from var(--gt-shadow-color) l c h / 0.8);
+
+  --gt-selection: oklch(0.76 0.155 55 / 0.85);
+  --gt-selection-foreground: oklch(0.2 0.03 40);
+  --gt-scrollbar: oklch(0.38 0.04 40);
+
+  --gt-ambient-1: oklch(0.8 0.16 62);
+  --gt-ambient-2: oklch(0.68 0.19 40);
+  --gt-ambient-3: oklch(0.95 0.08 90);
+}

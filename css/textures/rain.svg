@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
+  <!-- Short slanted rain strokes, all kept inside the tile so it repeats cleanly. -->
+  <g stroke="{c}" stroke-opacity="{o}" stroke-width="1" stroke-linecap="round">
+    <path d="M14 8 l-3 12"/>
+    <path d="M62 22 l-4 16"/>
+    <path d="M118 6 l-3 11"/>
+    <path d="M160 30 l-4 15"/>
+    <path d="M36 58 l-3 13"/>
+    <path d="M92 64 l-4 16"/>
+    <path d="M140 76 l-3 12"/>
+    <path d="M20 104 l-4 15"/>
+    <path d="M70 112 l-3 11"/>
+    <path d="M122 118 l-4 16"/>
+    <path d="M166 108 l-3 12"/>
+    <path d="M44 150 l-4 15"/>
+    <path d="M98 156 l-3 12"/>
+    <path d="M148 150 l-4 16"/>
+  </g>
+</svg>

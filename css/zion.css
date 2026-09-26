@@ -1,0 +1,132 @@
+/*
+ * goodthemes/zion.css — Zion
+ *
+ * The new Jerusalem: gold "as it were transparent glass", gates of pearl, and
+ * twelve foundations of precious stone (the chart palette). The City: pearl and
+ * gold on cut crystal. The Light Thereof: deep amethyst lit from within, because
+ * "there shall be no night there".
+ *
+ * Type: Cinzel (display, the capitals of a city's gates), Mulish (body),
+ * Libre Caslon Text (serif).
+ */
+
+:is(:root, [data-gt-scope])[data-theme="zion"] {
+  /* ---- shadcn contract: The City ---- */
+  --background: oklch(0.955 0.012 300);
+  --foreground: oklch(0.24 0.04 290);
+  --card: oklch(0.985 0.006 300);
+  --card-foreground: oklch(0.24 0.04 290);
+  --popover: oklch(0.99 0.005 300);
+  --popover-foreground: oklch(0.24 0.04 290);
+  --primary: oklch(0.52 0.11 78);
+  --primary-foreground: oklch(0.985 0.01 90);
+  --secondary: oklch(0.915 0.025 300);
+  --secondary-foreground: oklch(0.32 0.07 295);
+  --muted: oklch(0.93 0.016 300);
+  --muted-foreground: oklch(0.47 0.04 290);
+  --accent: oklch(0.91 0.04 165);
+  --accent-foreground: oklch(0.38 0.08 165);
+  --destructive: oklch(0.52 0.2 25);
+  --border: oklch(0.87 0.022 300);
+  --input: oklch(0.84 0.026 300);
+  --ring: oklch(0.6 0.12 80);
+  /* Five of the twelve foundations: sapphire, emerald, topaz, sardius, amethyst. */
+  --chart-1: oklch(0.48 0.15 262);
+  --chart-2: oklch(0.58 0.13 162);
+  --chart-3: oklch(0.76 0.14 85);
+  --chart-4: oklch(0.55 0.18 22);
+  --chart-5: oklch(0.52 0.15 305);
+  --radius: 0.35rem;
+  --sidebar: oklch(0.94 0.015 300);
+  --sidebar-foreground: oklch(0.24 0.04 290);
+  --sidebar-primary: oklch(0.52 0.11 78);
+  --sidebar-primary-foreground: oklch(0.985 0.01 90);
+  --sidebar-accent: oklch(0.91 0.04 165);
+  --sidebar-accent-foreground: oklch(0.38 0.08 165);
+  --sidebar-border: oklch(0.87 0.022 300);
+  --sidebar-ring: oklch(0.6 0.12 80);
+
+  /* ---- type ---- */
+  --gt-font-display: "Cinzel", "Libre Caslon Text", ui-serif, Georgia, serif;
+  --gt-font-body: "Mulish", ui-sans-serif, system-ui, sans-serif;
+  --gt-font-serif: "Libre Caslon Text", ui-serif, Georgia, serif;
+  --gt-display-weight: 600;
+  --gt-display-tracking: 0.02em;
+  --font-sans: var(--gt-font-body);
+  --font-heading: var(--gt-font-display);
+  --font-serif: var(--gt-font-serif);
+
+  /* ---- surface: cut crystal ---- */
+  --gt-texture: url("texture:facets.svg?c=7a6aa0&o=0.1");
+  --gt-texture-size: 60px 104px;
+  --gt-card-texture: none;
+  --gt-shadow-color: oklch(0.45 0.08 295);
+  --gt-shadow:
+    0 1px 2px oklch(from var(--gt-shadow-color) l c h / 0.06),
+    0 14px 30px -18px oklch(from var(--gt-shadow-color) l c h / 0.35);
+
+  --gt-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --gt-duration: 320ms;
+
+  --gt-selection: oklch(0.52 0.11 78 / 0.85);
+  --gt-selection-foreground: oklch(0.985 0.01 90);
+  --gt-scrollbar: oklch(0.74 0.04 300);
+
+  /* ---- ambient: light breaking through stone ---- */
+  --gt-ambient-1: oklch(0.76 0.14 85);
+  --gt-ambient-2: oklch(0.7 0.12 262);
+  --gt-ambient-3: oklch(0.72 0.12 162);
+
+  /* ---- touches: cards set in gold, light catching the top edge like glass ---- */
+  --gt-card-ring: oklch(from var(--primary) l c h / 0.55);
+  --gt-card-inset: inset 0 1px 0 oklch(1 0 0 / 0.55);
+}
+
+:is(:root, [data-gt-scope])[data-theme="zion"].dark {
+  /* ---- shadcn contract: The Light Thereof ---- */
+  --background: oklch(0.2 0.055 300);
+  --foreground: oklch(0.945 0.02 300);
+  --card: oklch(0.25 0.06 300);
+  --card-foreground: oklch(0.945 0.02 300);
+  --popover: oklch(0.27 0.062 300);
+  --popover-foreground: oklch(0.945 0.02 300);
+  --primary: oklch(0.84 0.13 88);
+  --primary-foreground: oklch(0.22 0.05 300);
+  --secondary: oklch(0.31 0.06 300);
+  --secondary-foreground: oklch(0.945 0.02 300);
+  --muted: oklch(0.29 0.055 300);
+  --muted-foreground: oklch(0.77 0.04 300);
+  --accent: oklch(0.33 0.06 170);
+  --accent-foreground: oklch(0.9 0.06 165);
+  --destructive: oklch(0.7 0.17 25);
+  --border: oklch(0.945 0.02 300 / 0.13);
+  --input: oklch(0.945 0.02 300 / 0.18);
+  --ring: oklch(0.84 0.13 88 / 0.6);
+  --chart-1: oklch(0.72 0.13 262);
+  --chart-2: oklch(0.74 0.12 162);
+  --chart-3: oklch(0.84 0.13 88);
+  --chart-4: oklch(0.7 0.16 22);
+  --chart-5: oklch(0.72 0.13 310);
+  --sidebar: oklch(0.225 0.058 300);
+  --sidebar-foreground: oklch(0.945 0.02 300);
+  --sidebar-primary: oklch(0.84 0.13 88);
+  --sidebar-primary-foreground: oklch(0.22 0.05 300);
+  --sidebar-accent: oklch(0.31 0.06 300);
+  --sidebar-accent-foreground: oklch(0.945 0.02 300);
+  --sidebar-border: oklch(0.945 0.02 300 / 0.12);
+  --sidebar-ring: oklch(0.84 0.13 88 / 0.6);
+
+  --gt-texture: url("texture:facets.svg?c=e8d8ff&o=0.06");
+  --gt-shadow-color: oklch(0.08 0.05 300);
+  --gt-shadow:
+    0 1px 2px oklch(from var(--gt-shadow-color) l c h / 0.4),
+    0 16px 32px -16px oklch(from var(--gt-shadow-color) l c h / 0.7);
+
+  --gt-selection: oklch(0.84 0.13 88 / 0.8);
+  --gt-selection-foreground: oklch(0.22 0.05 300);
+  --gt-scrollbar: oklch(0.42 0.06 300);
+
+  --gt-ambient-1: oklch(0.9 0.12 88);
+  --gt-ambient-2: oklch(0.8 0.1 262);
+  --gt-ambient-3: oklch(0.82 0.1 162);
+}

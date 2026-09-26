@@ -1,0 +1,133 @@
+/*
+ * goodthemes/empty-tomb.css — Empty Tomb
+ *
+ * "He is not here: for he is risen." First Light: rose-white dawn with the sunrise
+ * glowing at the top of the page, garden olive ("in the garden a new sepulchre").
+ * Still Dark: "when it was yet dark," slate before sunrise, and peach first light.
+ *
+ * Type: Gloock (display, high-contrast and hopeful), Manrope (body), Source Serif 4 (serif).
+ */
+
+:is(:root, [data-gt-scope])[data-theme="empty-tomb"] {
+  /* ---- shadcn contract: First Light ---- */
+  --background: oklch(0.96 0.02 15);
+  --foreground: oklch(0.25 0.025 20);
+  --card: oklch(0.99 0.008 30);
+  --card-foreground: oklch(0.25 0.025 20);
+  --popover: oklch(0.992 0.006 30);
+  --popover-foreground: oklch(0.25 0.025 20);
+  --primary: oklch(0.44 0.085 125);
+  --primary-foreground: oklch(0.98 0.01 90);
+  --secondary: oklch(0.92 0.03 25);
+  --secondary-foreground: oklch(0.36 0.07 20);
+  --muted: oklch(0.93 0.015 20);
+  --muted-foreground: oklch(0.48 0.03 25);
+  --accent: oklch(0.92 0.07 75);
+  --accent-foreground: oklch(0.42 0.09 60);
+  --destructive: oklch(0.5 0.19 25);
+  --border: oklch(0.88 0.018 20);
+  --input: oklch(0.85 0.022 20);
+  --ring: oklch(0.56 0.09 125);
+  --chart-1: oklch(0.5 0.1 125);
+  --chart-2: oklch(0.78 0.13 70);
+  --chart-3: oklch(0.62 0.13 10);
+  --chart-4: oklch(0.62 0.08 235);
+  --chart-5: oklch(0.55 0.02 60);
+  --radius: 0.6rem;
+  --sidebar: oklch(0.945 0.022 15);
+  --sidebar-foreground: oklch(0.25 0.025 20);
+  --sidebar-primary: oklch(0.44 0.085 125);
+  --sidebar-primary-foreground: oklch(0.98 0.01 90);
+  --sidebar-accent: oklch(0.92 0.07 75);
+  --sidebar-accent-foreground: oklch(0.42 0.09 60);
+  --sidebar-border: oklch(0.88 0.018 20);
+  --sidebar-ring: oklch(0.56 0.09 125);
+
+  /* ---- type ---- */
+  --gt-font-display: "Gloock", "Source Serif 4", ui-serif, Georgia, serif;
+  --gt-font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --gt-font-serif: "Source Serif 4", ui-serif, Georgia, serif;
+  --gt-display-weight: 400;
+  --gt-display-tracking: 0;
+  --font-sans: var(--gt-font-body);
+  --font-heading: var(--gt-font-display);
+  --font-serif: var(--gt-font-serif);
+
+  /* ---- surface: the sun coming up over the top of the page ---- */
+  --gt-texture: radial-gradient(ellipse 130% 55% at 50% -12%, oklch(0.9 0.09 70 / 0.5), transparent 72%);
+  --gt-texture-size: 100% 100%;
+  --gt-card-texture: none;
+  --gt-shadow-color: oklch(0.45 0.05 20);
+  --gt-shadow:
+    0 1px 2px oklch(from var(--gt-shadow-color) l c h / 0.06),
+    0 14px 30px -18px oklch(from var(--gt-shadow-color) l c h / 0.32);
+
+  /* ---- motion: slow to begin, then sure, like morning coming ---- */
+  --gt-ease: cubic-bezier(0.5, 0, 0.2, 1);
+  --gt-duration: 320ms;
+
+  --gt-selection: oklch(0.44 0.085 125 / 0.85);
+  --gt-selection-foreground: oklch(0.98 0.01 90);
+  --gt-scrollbar: oklch(0.74 0.03 20);
+
+  /* ---- ambient: golden motes in the first light; stars fading before dawn ---- */
+  --gt-ambient-1: oklch(0.86 0.11 78);
+  --gt-ambient-2: oklch(0.97 0.03 80);
+  --gt-ambient-3: oklch(0.84 0.07 20);
+
+  /* ---- touches: light catching the top edge of each card ---- */
+  --gt-card-inset: inset 0 1px 0 oklch(1 0 0 / 0.7);
+  --gt-primary-shadow: 0 5px 14px -8px oklch(from var(--primary) l c h / 0.6);
+}
+
+:is(:root, [data-gt-scope])[data-theme="empty-tomb"].dark {
+  /* ---- shadcn contract: Still Dark ---- */
+  --background: oklch(0.19 0.02 290);
+  --foreground: oklch(0.93 0.015 60);
+  --card: oklch(0.235 0.024 290);
+  --card-foreground: oklch(0.93 0.015 60);
+  --popover: oklch(0.255 0.026 290);
+  --popover-foreground: oklch(0.93 0.015 60);
+  --primary: oklch(0.84 0.09 55);
+  --primary-foreground: oklch(0.22 0.03 290);
+  --secondary: oklch(0.28 0.025 290);
+  --secondary-foreground: oklch(0.93 0.015 60);
+  --muted: oklch(0.265 0.024 290);
+  --muted-foreground: oklch(0.75 0.025 300);
+  --accent: oklch(0.32 0.05 125);
+  --accent-foreground: oklch(0.9 0.06 120);
+  --destructive: oklch(0.7 0.17 25);
+  --border: oklch(0.93 0.015 60 / 0.12);
+  --input: oklch(0.93 0.015 60 / 0.17);
+  --ring: oklch(0.84 0.09 55 / 0.6);
+  --chart-1: oklch(0.84 0.09 55);
+  --chart-2: oklch(0.74 0.1 125);
+  --chart-3: oklch(0.72 0.12 10);
+  --chart-4: oklch(0.72 0.08 235);
+  --chart-5: oklch(0.7 0.02 60);
+  --sidebar: oklch(0.21 0.022 290);
+  --sidebar-foreground: oklch(0.93 0.015 60);
+  --sidebar-primary: oklch(0.84 0.09 55);
+  --sidebar-primary-foreground: oklch(0.22 0.03 290);
+  --sidebar-accent: oklch(0.28 0.025 290);
+  --sidebar-accent-foreground: oklch(0.93 0.015 60);
+  --sidebar-border: oklch(0.93 0.015 60 / 0.11);
+  --sidebar-ring: oklch(0.84 0.09 55 / 0.6);
+
+  /* Dawn not yet over the hills: a faint warmth along the bottom of the page. */
+  --gt-texture: radial-gradient(ellipse 130% 45% at 50% 112%, oklch(0.55 0.09 35 / 0.32), transparent 72%);
+  --gt-shadow-color: oklch(0.07 0.02 290);
+  --gt-shadow:
+    0 1px 2px oklch(from var(--gt-shadow-color) l c h / 0.4),
+    0 16px 32px -16px oklch(from var(--gt-shadow-color) l c h / 0.75);
+
+  --gt-selection: oklch(0.84 0.09 55 / 0.8);
+  --gt-selection-foreground: oklch(0.22 0.03 290);
+  --gt-scrollbar: oklch(0.36 0.025 290);
+
+  --gt-ambient-1: oklch(0.95 0.01 80);
+  --gt-ambient-2: oklch(0.65 0.1 30);
+  --gt-ambient-3: oklch(0.84 0.09 55);
+
+  --gt-card-inset: inset 0 1px 0 oklch(1 0 0 / 0.06);
+}

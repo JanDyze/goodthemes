@@ -1,0 +1,133 @@
+/*
+ * goodthemes/jericho.css — Jericho
+ *
+ * The city of palm trees, and its walls. Seventh Day: dry palm-khaki and ivory,
+ * dressed stone, and a scarlet cord for the one thing that matters. Scarlet Cord:
+ * the camp at night, olive-black, the cord still red in the window.
+ *
+ * Type: Rammetto One (display, massive as a wall), Onest (body), Vollkorn (serif).
+ */
+
+:is(:root, [data-gt-scope])[data-theme="jericho"] {
+  /* ---- shadcn contract: Seventh Day ---- */
+  --background: oklch(0.915 0.03 108);
+  --foreground: oklch(0.24 0.035 120);
+  --card: oklch(0.965 0.016 95);
+  --card-foreground: oklch(0.24 0.035 120);
+  --popover: oklch(0.975 0.013 95);
+  --popover-foreground: oklch(0.24 0.035 120);
+  --primary: oklch(0.47 0.19 28);
+  --primary-foreground: oklch(0.975 0.012 90);
+  --secondary: oklch(0.87 0.045 112);
+  --secondary-foreground: oklch(0.3 0.06 125);
+  --muted: oklch(0.89 0.03 108);
+  --muted-foreground: oklch(0.45 0.045 115);
+  --accent: oklch(0.91 0.045 25);
+  --accent-foreground: oklch(0.42 0.16 28);
+  --destructive: oklch(0.46 0.17 355);
+  --border: oklch(0.82 0.04 108);
+  --input: oklch(0.79 0.045 108);
+  --ring: oklch(0.55 0.17 28);
+  --chart-1: oklch(0.47 0.19 28);
+  --chart-2: oklch(0.45 0.08 150);
+  --chart-3: oklch(0.74 0.12 85);
+  --chart-4: oklch(0.58 0.07 60);
+  --chart-5: oklch(0.36 0.03 120);
+  --radius: 0.2rem;
+  --sidebar: oklch(0.9 0.032 108);
+  --sidebar-foreground: oklch(0.24 0.035 120);
+  --sidebar-primary: oklch(0.47 0.19 28);
+  --sidebar-primary-foreground: oklch(0.975 0.012 90);
+  --sidebar-accent: oklch(0.87 0.045 112);
+  --sidebar-accent-foreground: oklch(0.3 0.06 125);
+  --sidebar-border: oklch(0.82 0.04 108);
+  --sidebar-ring: oklch(0.55 0.17 28);
+
+  /* ---- type ---- */
+  --gt-font-display: "Rammetto One", "Onest", ui-sans-serif, system-ui, sans-serif;
+  --gt-font-body: "Onest", ui-sans-serif, system-ui, sans-serif;
+  --gt-font-serif: "Vollkorn", ui-serif, Georgia, serif;
+  --gt-display-weight: 400;
+  --gt-display-tracking: -0.01em;
+  --font-sans: var(--gt-font-body);
+  --font-heading: var(--gt-font-display);
+  --font-serif: var(--gt-font-serif);
+
+  /* ---- surface: dressed stone in big courses ---- */
+  --gt-texture:
+    url("texture:grain.svg?c=5a5a30&o=0.35"),
+    url("texture:bricks.svg?c=6f6a45&o=0.12");
+  --gt-texture-size: 128px 128px, 176px 66px;
+  --gt-card-texture: none;
+  --gt-shadow-color: oklch(0.38 0.05 115);
+  --gt-shadow:
+    0 1px 1px oklch(from var(--gt-shadow-color) l c h / 0.12),
+    0 10px 20px -12px oklch(from var(--gt-shadow-color) l c h / 0.45);
+
+  --gt-ease: cubic-bezier(0.7, 0, 0.84, 0);
+  --gt-duration: 220ms;
+
+  --gt-selection: oklch(0.47 0.19 28 / 0.88);
+  --gt-selection-foreground: oklch(0.975 0.012 90);
+  --gt-scrollbar: oklch(0.7 0.05 110);
+
+  /* ---- ambient: horn blasts and dust ---- */
+  --gt-ambient-1: oklch(0.5 0.05 110);
+  --gt-ambient-2: oklch(0.47 0.19 28);
+  --gt-ambient-3: oklch(0.62 0.05 90);
+
+  /* ---- touches: cards laid like wall stone, a heavy course line beneath ---- */
+  --gt-card-inset: inset 0 -3px 0 oklch(from var(--gt-shadow-color) l c h / 0.14);
+  --gt-control-tracking: 0.02em;
+}
+
+:is(:root, [data-gt-scope])[data-theme="jericho"].dark {
+  /* ---- shadcn contract: Scarlet Cord ---- */
+  --background: oklch(0.18 0.022 118);
+  --foreground: oklch(0.925 0.02 95);
+  --card: oklch(0.23 0.028 115);
+  --card-foreground: oklch(0.925 0.02 95);
+  --popover: oklch(0.25 0.03 115);
+  --popover-foreground: oklch(0.925 0.02 95);
+  --primary: oklch(0.66 0.2 30);
+  --primary-foreground: oklch(0.18 0.03 30);
+  --secondary: oklch(0.28 0.03 118);
+  --secondary-foreground: oklch(0.925 0.02 95);
+  --muted: oklch(0.265 0.028 118);
+  --muted-foreground: oklch(0.74 0.035 100);
+  --accent: oklch(0.32 0.08 28);
+  --accent-foreground: oklch(0.92 0.05 40);
+  --destructive: oklch(0.68 0.17 355);
+  --border: oklch(0.925 0.02 95 / 0.12);
+  --input: oklch(0.925 0.02 95 / 0.17);
+  --ring: oklch(0.66 0.2 30 / 0.6);
+  --chart-1: oklch(0.66 0.2 30);
+  --chart-2: oklch(0.7 0.09 150);
+  --chart-3: oklch(0.8 0.12 85);
+  --chart-4: oklch(0.7 0.06 60);
+  --chart-5: oklch(0.62 0.04 110);
+  --sidebar: oklch(0.205 0.025 118);
+  --sidebar-foreground: oklch(0.925 0.02 95);
+  --sidebar-primary: oklch(0.66 0.2 30);
+  --sidebar-primary-foreground: oklch(0.18 0.03 30);
+  --sidebar-accent: oklch(0.28 0.03 118);
+  --sidebar-accent-foreground: oklch(0.925 0.02 95);
+  --sidebar-border: oklch(0.925 0.02 95 / 0.11);
+  --sidebar-ring: oklch(0.66 0.2 30 / 0.6);
+
+  --gt-texture:
+    url("texture:grain.svg?c=e0dcb0&o=0.12"),
+    url("texture:bricks.svg?c=e0dcb0&o=0.04");
+  --gt-shadow-color: oklch(0.07 0.02 118);
+  --gt-shadow:
+    0 1px 1px oklch(from var(--gt-shadow-color) l c h / 0.45),
+    0 12px 22px -12px oklch(from var(--gt-shadow-color) l c h / 0.8);
+
+  --gt-selection: oklch(0.66 0.2 30 / 0.85);
+  --gt-selection-foreground: oklch(0.18 0.03 30);
+  --gt-scrollbar: oklch(0.38 0.035 118);
+
+  --gt-ambient-1: oklch(0.82 0.15 60);
+  --gt-ambient-2: oklch(0.66 0.2 32);
+  --gt-ambient-3: oklch(0.95 0.08 90);
+}

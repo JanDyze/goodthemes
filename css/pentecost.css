@@ -1,0 +1,129 @@
+/*
+ * goodthemes/pentecost.css — Pentecost
+ *
+ * "A rushing mighty wind", and "cloven tongues like as of fire". Rushing Wind:
+ * cool plaster, streamlines of wind, liturgical red and flame gold. Tongues of
+ * Fire: a night-blue room lit by flame.
+ *
+ * Type: Unbounded (display, wide and moving), Schibsted Grotesk (body), Petrona (serif).
+ */
+
+:is(:root, [data-gt-scope])[data-theme="pentecost"] {
+  /* ---- shadcn contract: Rushing Wind ---- */
+  --background: oklch(0.95 0.008 250);
+  --foreground: oklch(0.23 0.03 260);
+  --card: oklch(0.985 0.004 250);
+  --card-foreground: oklch(0.23 0.03 260);
+  --popover: oklch(0.99 0.003 250);
+  --popover-foreground: oklch(0.23 0.03 260);
+  --primary: oklch(0.5 0.2 27);
+  --primary-foreground: oklch(0.985 0.008 60);
+  --secondary: oklch(0.91 0.015 250);
+  --secondary-foreground: oklch(0.3 0.04 260);
+  --muted: oklch(0.925 0.01 250);
+  --muted-foreground: oklch(0.47 0.03 260);
+  --accent: oklch(0.92 0.07 75);
+  --accent-foreground: oklch(0.42 0.11 50);
+  --destructive: oklch(0.47 0.19 358);
+  --border: oklch(0.87 0.012 250);
+  --input: oklch(0.84 0.016 250);
+  --ring: oklch(0.58 0.19 30);
+  --chart-1: oklch(0.52 0.2 27);
+  --chart-2: oklch(0.72 0.17 55);
+  --chart-3: oklch(0.8 0.14 85);
+  --chart-4: oklch(0.55 0.12 245);
+  --chart-5: oklch(0.45 0.13 300);
+  --radius: 0.55rem;
+  --sidebar: oklch(0.935 0.01 250);
+  --sidebar-foreground: oklch(0.23 0.03 260);
+  --sidebar-primary: oklch(0.5 0.2 27);
+  --sidebar-primary-foreground: oklch(0.985 0.008 60);
+  --sidebar-accent: oklch(0.92 0.07 75);
+  --sidebar-accent-foreground: oklch(0.42 0.11 50);
+  --sidebar-border: oklch(0.87 0.012 250);
+  --sidebar-ring: oklch(0.58 0.19 30);
+
+  /* ---- type ---- */
+  --gt-font-display: "Unbounded", "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --gt-font-body: "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --gt-font-serif: "Petrona", ui-serif, Georgia, serif;
+  --gt-display-weight: 600;
+  --gt-display-tracking: -0.02em;
+  --font-sans: var(--gt-font-body);
+  --font-heading: var(--gt-font-display);
+  --font-serif: var(--gt-font-serif);
+
+  /* ---- surface: the wind's streamlines ---- */
+  --gt-texture: url("texture:wind.svg?c=5a6a90&o=0.13");
+  --gt-texture-size: 320px 140px;
+  --gt-card-texture: none;
+  --gt-shadow-color: oklch(0.4 0.05 260);
+  --gt-shadow:
+    0 1px 2px oklch(from var(--gt-shadow-color) l c h / 0.07),
+    0 14px 28px -18px oklch(from var(--gt-shadow-color) l c h / 0.4);
+
+  /* ---- motion: a gust, quick in and long to settle ---- */
+  --gt-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --gt-duration: 280ms;
+
+  --gt-selection: oklch(0.5 0.2 27 / 0.88);
+  --gt-selection-foreground: oklch(0.985 0.008 60);
+  --gt-scrollbar: oklch(0.72 0.03 250);
+
+  /* ---- ambient: wind (and, at night, flame) ---- */
+  --gt-ambient-1: oklch(0.5 0.05 255);
+  --gt-ambient-2: oklch(0.62 0.18 35);
+  --gt-ambient-3: oklch(0.7 0.04 250);
+
+  /* ---- touches: primary buttons carry a little flame beneath them ---- */
+  --gt-primary-shadow: 0 6px 18px -8px oklch(from var(--primary) l c h / 0.75);
+}
+
+:is(:root, [data-gt-scope])[data-theme="pentecost"].dark {
+  /* ---- shadcn contract: Tongues of Fire ---- */
+  --background: oklch(0.18 0.042 265);
+  --foreground: oklch(0.93 0.015 250);
+  --card: oklch(0.225 0.048 265);
+  --card-foreground: oklch(0.93 0.015 250);
+  --popover: oklch(0.245 0.05 265);
+  --popover-foreground: oklch(0.93 0.015 250);
+  --primary: oklch(0.72 0.19 40);
+  --primary-foreground: oklch(0.18 0.04 30);
+  --secondary: oklch(0.28 0.045 265);
+  --secondary-foreground: oklch(0.93 0.015 250);
+  --muted: oklch(0.265 0.044 265);
+  --muted-foreground: oklch(0.74 0.035 250);
+  --accent: oklch(0.32 0.08 30);
+  --accent-foreground: oklch(0.92 0.06 60);
+  --destructive: oklch(0.7 0.17 358);
+  --border: oklch(0.93 0.015 250 / 0.12);
+  --input: oklch(0.93 0.015 250 / 0.17);
+  --ring: oklch(0.72 0.19 40 / 0.6);
+  --chart-1: oklch(0.72 0.19 40);
+  --chart-2: oklch(0.84 0.14 80);
+  --chart-3: oklch(0.66 0.2 25);
+  --chart-4: oklch(0.72 0.1 240);
+  --chart-5: oklch(0.7 0.12 300);
+  --sidebar: oklch(0.205 0.045 265);
+  --sidebar-foreground: oklch(0.93 0.015 250);
+  --sidebar-primary: oklch(0.72 0.19 40);
+  --sidebar-primary-foreground: oklch(0.18 0.04 30);
+  --sidebar-accent: oklch(0.28 0.045 265);
+  --sidebar-accent-foreground: oklch(0.93 0.015 250);
+  --sidebar-border: oklch(0.93 0.015 250 / 0.11);
+  --sidebar-ring: oklch(0.72 0.19 40 / 0.6);
+
+  --gt-texture: url("texture:wind.svg?c=b0bce8&o=0.06");
+  --gt-shadow-color: oklch(0.07 0.04 265);
+  --gt-shadow:
+    0 1px 2px oklch(from var(--gt-shadow-color) l c h / 0.4),
+    0 16px 32px -16px oklch(from var(--gt-shadow-color) l c h / 0.8);
+
+  --gt-selection: oklch(0.72 0.19 40 / 0.85);
+  --gt-selection-foreground: oklch(0.18 0.04 30);
+  --gt-scrollbar: oklch(0.38 0.05 265);
+
+  --gt-ambient-1: oklch(0.86 0.15 80);
+  --gt-ambient-2: oklch(0.7 0.21 38);
+  --gt-ambient-3: oklch(0.62 0.22 28);
+}

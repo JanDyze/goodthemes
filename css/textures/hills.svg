@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="110" viewBox="0 0 320 110">
+  <!-- Rolling hill contours. Each line is one period of a symmetric wave, so the tile repeats. -->
+  <g fill="none" stroke="{c}" stroke-opacity="{o}" stroke-width="1.1" stroke-linecap="round">
+    <path d="M0 34 C 50 14, 110 14, 160 34 S 270 54, 320 34"/>
+    <path d="M0 70 C 40 56, 120 56, 160 70 S 280 84, 320 70"/>
+    <path d="M0 98 C 60 90, 100 90, 160 98 S 260 106, 320 98"/>
+  </g>
+</svg>

@@ -1,0 +1,133 @@
+/*
+ * goodthemes/eden.css — Eden
+ *
+ * The garden. Morning: leaf-light, deep canopy green, pomegranate and fig, cards
+ * cut like leaves, buttons with spring in them. Evening: the garden after dark,
+ * moss-black ground and firefly lime.
+ *
+ * Type: Caprasimo (display, ripe and round), Figtree (body), Gelasio (serif).
+ */
+
+:is(:root, [data-gt-scope])[data-theme="eden"] {
+  /* ---- shadcn contract: Morning ---- */
+  --background: oklch(0.952 0.034 128);
+  --foreground: oklch(0.255 0.052 155);
+  --card: oklch(0.984 0.014 120);
+  --card-foreground: oklch(0.255 0.052 155);
+  --popover: oklch(0.988 0.012 120);
+  --popover-foreground: oklch(0.255 0.052 155);
+  --primary: oklch(0.44 0.118 152);
+  --primary-foreground: oklch(0.982 0.016 120);
+  --secondary: oklch(0.9 0.062 130);
+  --secondary-foreground: oklch(0.3 0.07 150);
+  --muted: oklch(0.918 0.038 128);
+  --muted-foreground: oklch(0.455 0.062 150);
+  --accent: oklch(0.925 0.045 355);
+  --accent-foreground: oklch(0.42 0.15 8);
+  --destructive: oklch(0.54 0.2 24);
+  --border: oklch(0.86 0.048 130);
+  --input: oklch(0.83 0.055 130);
+  --ring: oklch(0.6 0.14 150);
+  --chart-1: oklch(0.5 0.12 152);
+  --chart-2: oklch(0.56 0.19 12);
+  --chart-3: oklch(0.8 0.16 118);
+  --chart-4: oklch(0.47 0.12 320);
+  --chart-5: oklch(0.6 0.1 225);
+  --radius: 1rem;
+  --sidebar: oklch(0.935 0.04 128);
+  --sidebar-foreground: oklch(0.255 0.052 155);
+  --sidebar-primary: oklch(0.44 0.118 152);
+  --sidebar-primary-foreground: oklch(0.982 0.016 120);
+  --sidebar-accent: oklch(0.9 0.06 130);
+  --sidebar-accent-foreground: oklch(0.3 0.07 150);
+  --sidebar-border: oklch(0.86 0.048 130);
+  --sidebar-ring: oklch(0.6 0.14 150);
+
+  /* ---- type ---- */
+  --gt-font-display: "Caprasimo", "Figtree", ui-rounded, ui-sans-serif, system-ui, sans-serif;
+  --gt-font-body: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --gt-font-serif: "Gelasio", ui-serif, Georgia, serif;
+  --gt-display-weight: 400;
+  --gt-display-tracking: 0;
+  --font-sans: var(--gt-font-body);
+  --font-heading: var(--gt-font-display);
+  --font-serif: var(--gt-font-serif);
+
+  /* ---- surface ---- */
+  --gt-texture: url("texture:leaves.svg?c=3f7a4a&o=0.055");
+  --gt-texture-size: 260px 260px;
+  --gt-card-texture: none;
+  /* Light through a canopy: soft, straight down, tinted green. */
+  --gt-shadow-color: oklch(0.4 0.09 150);
+  --gt-shadow:
+    0 1px 2px oklch(from var(--gt-shadow-color) l c h / 0.07),
+    0 14px 30px -18px oklch(from var(--gt-shadow-color) l c h / 0.38);
+
+  /* ---- motion: everything has a little spring in it ---- */
+  --gt-ease: linear(0, 0.22 7%, 0.6 16%, 0.92 26%, 1.06 35%, 1.09 42%, 1.06 52%, 1.01 64%, 0.995 76%, 1);
+  --gt-duration: 460ms;
+
+  /* ---- browser surfaces ---- */
+  --gt-selection: oklch(0.86 0.1 355 / 0.9);
+  --gt-selection-foreground: oklch(0.25 0.08 10);
+  --gt-scrollbar: oklch(0.72 0.08 140);
+
+  /* ---- ambient (read by <Ambient />) ---- */
+  --gt-ambient-1: oklch(0.86 0.08 355);
+  --gt-ambient-2: oklch(0.94 0.04 20);
+  --gt-ambient-3: oklch(0.66 0.13 140);
+
+  /* ---- touches: cards cut like leaves, buttons that give when pressed ---- */
+  --gt-card-radius: calc(var(--radius) * 1.6) calc(var(--radius) * 0.45);
+  --gt-card-header-radius: calc(var(--radius) * 1.6) calc(var(--radius) * 0.45) 0 0;
+  --gt-press-scale: 0.95;
+}
+
+:is(:root, [data-gt-scope])[data-theme="eden"].dark {
+  /* ---- shadcn contract: Evening ---- */
+  --background: oklch(0.182 0.03 162);
+  --foreground: oklch(0.93 0.032 125);
+  --card: oklch(0.226 0.036 160);
+  --card-foreground: oklch(0.93 0.032 125);
+  --popover: oklch(0.242 0.038 160);
+  --popover-foreground: oklch(0.93 0.032 125);
+  --primary: oklch(0.86 0.16 118);
+  --primary-foreground: oklch(0.22 0.05 150);
+  --secondary: oklch(0.29 0.045 158);
+  --secondary-foreground: oklch(0.93 0.032 125);
+  --muted: oklch(0.27 0.04 160);
+  --muted-foreground: oklch(0.74 0.05 130);
+  --accent: oklch(0.31 0.065 352);
+  --accent-foreground: oklch(0.92 0.05 350);
+  --destructive: oklch(0.7 0.17 22);
+  --border: oklch(0.93 0.032 125 / 0.12);
+  --input: oklch(0.93 0.032 125 / 0.17);
+  --ring: oklch(0.86 0.16 118 / 0.6);
+  --chart-1: oklch(0.86 0.16 118);
+  --chart-2: oklch(0.7 0.16 12);
+  --chart-3: oklch(0.72 0.1 225);
+  --chart-4: oklch(0.68 0.12 320);
+  --chart-5: oklch(0.82 0.08 355);
+  --sidebar: oklch(0.21 0.034 161);
+  --sidebar-foreground: oklch(0.93 0.032 125);
+  --sidebar-primary: oklch(0.86 0.16 118);
+  --sidebar-primary-foreground: oklch(0.22 0.05 150);
+  --sidebar-accent: oklch(0.29 0.045 158);
+  --sidebar-accent-foreground: oklch(0.93 0.032 125);
+  --sidebar-border: oklch(0.93 0.032 125 / 0.11);
+  --sidebar-ring: oklch(0.86 0.16 118 / 0.6);
+
+  --gt-texture: url("texture:leaves.svg?c=b5e08a&o=0.035");
+  --gt-shadow-color: oklch(0.08 0.03 160);
+  --gt-shadow:
+    0 1px 2px oklch(from var(--gt-shadow-color) l c h / 0.4),
+    0 16px 32px -16px oklch(from var(--gt-shadow-color) l c h / 0.7);
+
+  --gt-selection: oklch(0.86 0.16 118 / 0.85);
+  --gt-selection-foreground: oklch(0.2 0.05 150);
+  --gt-scrollbar: oklch(0.38 0.05 158);
+
+  --gt-ambient-1: oklch(0.9 0.17 115);
+  --gt-ambient-2: oklch(0.84 0.15 95);
+  --gt-ambient-3: oklch(0.8 0.12 150);
+}

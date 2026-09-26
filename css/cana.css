@@ -1,0 +1,140 @@
+/*
+ * goodthemes/cana.css — Cana
+ *
+ * The wedding where water became wine. The Feast: whitewashed stone like the six
+ * waterpots, table linen, deep wine and wedding gold, cards framed like an
+ * invitation. The Good Wine: wine-black and lamplight, kept until now.
+ *
+ * Type: Bodoni Moda italic (display, an invitation's lettering), Jost (body),
+ * EB Garamond (serif).
+ */
+
+:is(:root, [data-gt-scope])[data-theme="cana"] {
+  /* ---- shadcn contract: The Feast ---- */
+  --background: oklch(0.942 0.01 85);
+  --foreground: oklch(0.25 0.04 10);
+  --card: oklch(0.982 0.006 85);
+  --card-foreground: oklch(0.25 0.04 10);
+  --popover: oklch(0.988 0.005 85);
+  --popover-foreground: oklch(0.25 0.04 10);
+  --primary: oklch(0.4 0.14 10);
+  --primary-foreground: oklch(0.975 0.01 60);
+  --secondary: oklch(0.905 0.032 12);
+  --secondary-foreground: oklch(0.34 0.1 10);
+  --muted: oklch(0.905 0.012 80);
+  --muted-foreground: oklch(0.47 0.035 20);
+  --accent: oklch(0.9 0.065 90);
+  --accent-foreground: oklch(0.39 0.085 70);
+  --destructive: oklch(0.53 0.2 28);
+  --border: oklch(0.85 0.016 60);
+  --input: oklch(0.82 0.02 50);
+  --ring: oklch(0.55 0.13 12);
+  --chart-1: oklch(0.42 0.14 10);
+  --chart-2: oklch(0.76 0.12 85);
+  --chart-3: oklch(0.58 0.1 135);
+  --chart-4: oklch(0.62 0.08 230);
+  --chart-5: oklch(0.45 0.12 320);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.93 0.012 85);
+  --sidebar-foreground: oklch(0.25 0.04 10);
+  --sidebar-primary: oklch(0.4 0.14 10);
+  --sidebar-primary-foreground: oklch(0.975 0.01 60);
+  --sidebar-accent: oklch(0.9 0.065 90);
+  --sidebar-accent-foreground: oklch(0.39 0.085 70);
+  --sidebar-border: oklch(0.85 0.016 60);
+  --sidebar-ring: oklch(0.55 0.13 12);
+
+  /* ---- type ---- */
+  --gt-font-display: "Bodoni Moda", "EB Garamond", ui-serif, Georgia, serif;
+  --gt-font-body: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --gt-font-serif: "EB Garamond", ui-serif, Georgia, serif;
+  --gt-display-weight: 600;
+  --gt-display-tracking: -0.01em;
+  --gt-display-style: italic;
+  --font-sans: var(--gt-font-body);
+  --font-heading: var(--gt-font-display);
+  --font-serif: var(--gt-font-serif);
+
+  /* ---- surface ---- */
+  --gt-texture:
+    url("texture:grain.svg?c=6b5a48&o=0.22"),
+    url("texture:linen.svg?c=8a7258&o=0.06");
+  --gt-texture-size: 128px 128px, 14px 14px;
+  --gt-card-texture: none;
+  /* The invitation's inner rule: a gold hairline set in from the card's edge. */
+  --gt-frame: oklch(0.76 0.1 85 / 0.8);
+  --gt-shadow-color: oklch(0.4 0.06 20);
+  --gt-shadow:
+    0 1px 2px oklch(from var(--gt-shadow-color) l c h / 0.06),
+    0 14px 28px -18px oklch(from var(--gt-shadow-color) l c h / 0.35);
+
+  /* ---- motion: unhurried, a procession rather than a rush ---- */
+  --gt-ease: cubic-bezier(0.4, 0, 0.1, 1);
+  --gt-duration: 360ms;
+
+  /* ---- browser surfaces ---- */
+  --gt-selection: oklch(0.4 0.14 10 / 0.88);
+  --gt-selection-foreground: oklch(0.975 0.01 60);
+  --gt-scrollbar: oklch(0.74 0.04 40);
+
+  /* ---- ambient (read by <Ambient />): wine, gold, water ---- */
+  --gt-ambient-1: oklch(0.45 0.15 10);
+  --gt-ambient-2: oklch(0.78 0.12 85);
+  --gt-ambient-3: oklch(0.66 0.08 230);
+
+  /* ---- touches: cards framed like an invitation, a gold hairline set 5px in ---- */
+  --gt-card-inset: inset 0 0 0 5px var(--card), inset 0 0 0 6px var(--gt-frame);
+  --gt-card-footer-inset: 6px;
+}
+
+:is(:root, [data-gt-scope])[data-theme="cana"].dark {
+  /* ---- shadcn contract: The Good Wine ---- */
+  --background: oklch(0.172 0.034 355);
+  --foreground: oklch(0.93 0.02 60);
+  --card: oklch(0.225 0.045 355);
+  --card-foreground: oklch(0.93 0.02 60);
+  --popover: oklch(0.245 0.048 355);
+  --popover-foreground: oklch(0.93 0.02 60);
+  --primary: oklch(0.83 0.12 85);
+  --primary-foreground: oklch(0.22 0.05 355);
+  --secondary: oklch(0.29 0.05 355);
+  --secondary-foreground: oklch(0.93 0.02 60);
+  --muted: oklch(0.27 0.045 355);
+  --muted-foreground: oklch(0.74 0.04 40);
+  --accent: oklch(0.34 0.1 8);
+  --accent-foreground: oklch(0.92 0.04 40);
+  --destructive: oklch(0.7 0.17 28);
+  --border: oklch(0.93 0.02 60 / 0.12);
+  --input: oklch(0.93 0.02 60 / 0.17);
+  --ring: oklch(0.83 0.12 85 / 0.6);
+  --chart-1: oklch(0.83 0.12 85);
+  --chart-2: oklch(0.66 0.17 12);
+  --chart-3: oklch(0.72 0.1 135);
+  --chart-4: oklch(0.72 0.08 230);
+  --chart-5: oklch(0.7 0.11 320);
+  --sidebar: oklch(0.2 0.04 355);
+  --sidebar-foreground: oklch(0.93 0.02 60);
+  --sidebar-primary: oklch(0.83 0.12 85);
+  --sidebar-primary-foreground: oklch(0.22 0.05 355);
+  --sidebar-accent: oklch(0.29 0.05 355);
+  --sidebar-accent-foreground: oklch(0.93 0.02 60);
+  --sidebar-border: oklch(0.93 0.02 60 / 0.11);
+  --sidebar-ring: oklch(0.83 0.12 85 / 0.6);
+
+  --gt-texture:
+    url("texture:grain.svg?c=f0c9b0&o=0.1"),
+    url("texture:linen.svg?c=f0c9b0&o=0.03");
+  --gt-frame: oklch(0.83 0.12 85 / 0.45);
+  --gt-shadow-color: oklch(0.06 0.03 355);
+  --gt-shadow:
+    0 1px 2px oklch(from var(--gt-shadow-color) l c h / 0.4),
+    0 16px 32px -16px oklch(from var(--gt-shadow-color) l c h / 0.75);
+
+  --gt-selection: oklch(0.83 0.12 85 / 0.85);
+  --gt-selection-foreground: oklch(0.22 0.05 355);
+  --gt-scrollbar: oklch(0.38 0.06 355);
+
+  --gt-ambient-1: oklch(0.86 0.12 85);
+  --gt-ambient-2: oklch(0.76 0.15 60);
+  --gt-ambient-3: oklch(0.6 0.05 40);
+}

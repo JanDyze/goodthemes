@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="64" viewBox="0 0 420 64">
+  <!-- Two courses of hull planking: seams, staggered butt joints, and a little grain. -->
+  <g fill="none" stroke="{c}" stroke-linecap="round">
+    <path d="M0 31.5 H420 M0 63.5 H420" stroke-opacity="{o}" stroke-width="1"/>
+    <path d="M130.5 0 V31 M330.5 32 V63" stroke-opacity="{o}" stroke-width="1"/>
+    <g stroke-opacity="{o}" stroke-width="0.6" opacity="0.55">
+      <path d="M0 10 C 40 8, 80 13, 130 10"/>
+      <path d="M131 18 C 200 15, 260 21, 420 17"/>
+      <path d="M0 23 C 60 25, 100 20, 130 22"/>
+      <path d="M0 42 C 90 40, 200 45, 330 41"/>
+      <path d="M331 45 C 360 43, 390 47, 420 44"/>
+      <path d="M0 54 C 70 56, 180 51, 330 55"/>
+    </g>
+  </g>
+</svg>

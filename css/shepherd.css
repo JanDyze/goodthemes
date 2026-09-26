@@ -1,0 +1,132 @@
+/*
+ * goodthemes/shepherd.css — Shepherd
+ *
+ * "The LORD is my shepherd." Green Pastures: a clear sky over rolling hills, cards
+ * soft as wool, a crook-brown primary and pasture green. The Fold: nightfall on the
+ * hills, earth-brown and wool-cream, the watch-fire lit.
+ *
+ * Type: Bree Serif (display, sturdy and gentle), Nunito (body, soft as wool),
+ * Gentium Book Plus (serif, drawn for biblical text).
+ */
+
+:is(:root, [data-gt-scope])[data-theme="shepherd"] {
+  /* ---- shadcn contract: Green Pastures ---- */
+  --background: oklch(0.94 0.032 232);
+  --foreground: oklch(0.26 0.03 55);
+  --card: oklch(0.985 0.012 90);
+  --card-foreground: oklch(0.26 0.03 55);
+  --popover: oklch(0.99 0.01 90);
+  --popover-foreground: oklch(0.26 0.03 55);
+  --primary: oklch(0.42 0.075 55);
+  --primary-foreground: oklch(0.97 0.015 90);
+  --secondary: oklch(0.9 0.035 232);
+  --secondary-foreground: oklch(0.32 0.06 240);
+  --muted: oklch(0.915 0.025 232);
+  --muted-foreground: oklch(0.45 0.04 240);
+  --accent: oklch(0.9 0.08 135);
+  --accent-foreground: oklch(0.36 0.09 145);
+  --destructive: oklch(0.52 0.19 27);
+  --border: oklch(0.85 0.03 232);
+  --input: oklch(0.82 0.035 232);
+  --ring: oklch(0.55 0.08 55);
+  --chart-1: oklch(0.56 0.13 140);
+  --chart-2: oklch(0.58 0.1 235);
+  --chart-3: oklch(0.8 0.1 85);
+  --chart-4: oklch(0.45 0.08 55);
+  --chart-5: oklch(0.55 0.1 320);
+  --radius: 0.9rem;
+  --sidebar: oklch(0.925 0.03 232);
+  --sidebar-foreground: oklch(0.26 0.03 55);
+  --sidebar-primary: oklch(0.42 0.075 55);
+  --sidebar-primary-foreground: oklch(0.97 0.015 90);
+  --sidebar-accent: oklch(0.9 0.08 135);
+  --sidebar-accent-foreground: oklch(0.36 0.09 145);
+  --sidebar-border: oklch(0.85 0.03 232);
+  --sidebar-ring: oklch(0.55 0.08 55);
+
+  /* ---- type ---- */
+  --gt-font-display: "Bree Serif", "Nunito", ui-serif, Georgia, serif;
+  --gt-font-body: "Nunito", ui-rounded, ui-sans-serif, system-ui, sans-serif;
+  --gt-font-serif: "Gentium Book Plus", ui-serif, Georgia, serif;
+  --gt-display-weight: 400;
+  --gt-display-tracking: 0;
+  --font-sans: var(--gt-font-body);
+  --font-heading: var(--gt-font-display);
+  --font-serif: var(--gt-font-serif);
+
+  /* ---- surface: hills rolling away under the sky ---- */
+  --gt-texture: url("texture:hills.svg?c=4f7a58&o=0.12");
+  --gt-texture-size: 320px 110px;
+  --gt-card-texture: none;
+  --gt-shadow-color: oklch(0.42 0.05 240);
+  --gt-shadow:
+    0 1px 2px oklch(from var(--gt-shadow-color) l c h / 0.06),
+    0 16px 30px -18px oklch(from var(--gt-shadow-color) l c h / 0.35);
+
+  /* ---- motion: unhurried, like a flock moving on ---- */
+  --gt-ease: cubic-bezier(0.35, 0.1, 0.25, 1);
+  --gt-duration: 340ms;
+
+  --gt-selection: oklch(0.42 0.075 55 / 0.85);
+  --gt-selection-foreground: oklch(0.97 0.015 90);
+  --gt-scrollbar: oklch(0.72 0.04 232);
+
+  /* ---- ambient: clouds by day, the watch-fire by night ---- */
+  --gt-ambient-1: oklch(1 0 0);
+  --gt-ambient-2: oklch(0.96 0.015 232);
+  --gt-ambient-3: oklch(0.88 0.03 232);
+
+  /* ---- touches: cards soft as wool, round on every corner ---- */
+  --gt-card-radius: calc(var(--radius) * 1.6);
+  --gt-card-header-radius: calc(var(--radius) * 1.6) calc(var(--radius) * 1.6) 0 0;
+  --gt-primary-shadow: 0 5px 14px -8px oklch(from var(--primary) l c h / 0.7);
+}
+
+:is(:root, [data-gt-scope])[data-theme="shepherd"].dark {
+  /* ---- shadcn contract: The Fold ---- */
+  --background: oklch(0.19 0.022 70);
+  --foreground: oklch(0.93 0.02 90);
+  --card: oklch(0.235 0.026 68);
+  --card-foreground: oklch(0.93 0.02 90);
+  --popover: oklch(0.255 0.028 68);
+  --popover-foreground: oklch(0.93 0.02 90);
+  --primary: oklch(0.9 0.04 88);
+  --primary-foreground: oklch(0.22 0.03 60);
+  --secondary: oklch(0.28 0.028 70);
+  --secondary-foreground: oklch(0.93 0.02 90);
+  --muted: oklch(0.265 0.026 70);
+  --muted-foreground: oklch(0.75 0.03 85);
+  --accent: oklch(0.31 0.06 140);
+  --accent-foreground: oklch(0.9 0.07 130);
+  --destructive: oklch(0.69 0.16 28);
+  --border: oklch(0.93 0.02 90 / 0.12);
+  --input: oklch(0.93 0.02 90 / 0.17);
+  --ring: oklch(0.9 0.04 88 / 0.55);
+  --chart-1: oklch(0.74 0.12 140);
+  --chart-2: oklch(0.72 0.09 235);
+  --chart-3: oklch(0.84 0.1 85);
+  --chart-4: oklch(0.7 0.09 55);
+  --chart-5: oklch(0.7 0.1 320);
+  --sidebar: oklch(0.21 0.024 70);
+  --sidebar-foreground: oklch(0.93 0.02 90);
+  --sidebar-primary: oklch(0.9 0.04 88);
+  --sidebar-primary-foreground: oklch(0.22 0.03 60);
+  --sidebar-accent: oklch(0.28 0.028 70);
+  --sidebar-accent-foreground: oklch(0.93 0.02 90);
+  --sidebar-border: oklch(0.93 0.02 90 / 0.11);
+  --sidebar-ring: oklch(0.9 0.04 88 / 0.55);
+
+  --gt-texture: url("texture:hills.svg?c=e8dcc0&o=0.05");
+  --gt-shadow-color: oklch(0.07 0.02 70);
+  --gt-shadow:
+    0 1px 2px oklch(from var(--gt-shadow-color) l c h / 0.4),
+    0 16px 32px -16px oklch(from var(--gt-shadow-color) l c h / 0.75);
+
+  --gt-selection: oklch(0.9 0.04 88 / 0.8);
+  --gt-selection-foreground: oklch(0.22 0.03 60);
+  --gt-scrollbar: oklch(0.38 0.03 70);
+
+  --gt-ambient-1: oklch(0.85 0.15 65);
+  --gt-ambient-2: oklch(0.7 0.18 45);
+  --gt-ambient-3: oklch(0.95 0.02 90);
+}

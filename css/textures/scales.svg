@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="12" viewBox="0 0 24 12">
+  <!-- Fish scales: rows of overlapping half-circles, each row offset by half a scale. -->
+  <g fill="none" stroke="{c}" stroke-opacity="{o}" stroke-width="0.8">
+    <path d="M-6 12 A6 6 0 0 1 6 12 A6 6 0 0 1 18 12 A6 6 0 0 1 30 12"/>
+    <path d="M0 6 A6 6 0 0 1 12 6 A6 6 0 0 1 24 6"/>
+  </g>
+</svg>

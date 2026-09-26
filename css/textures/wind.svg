@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="140" viewBox="0 0 320 140">
+  <!-- Streamlines of a rushing wind. Each is one period of a symmetric wave, so the tile repeats. -->
+  <g fill="none" stroke="{c}" stroke-opacity="{o}" stroke-width="1" stroke-linecap="round">
+    <path d="M0 26 C 60 14, 100 14, 160 26 S 260 38, 320 26"/>
+    <path d="M40 70 C 80 62, 120 62, 170 70 S 250 78, 280 72"/>
+    <path d="M0 112 C 50 120, 110 120, 160 112 S 270 104, 320 112"/>
+  </g>
+</svg>

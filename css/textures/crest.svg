@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="60" viewBox="0 0 480 60" preserveAspectRatio="none">
+  <!-- A hill, opaque beneath; tiles meet in valleys. Used as the leading edge of a mask. -->
+  <path d="M0 44 C 110 4, 370 4, 480 44 V60 H0 Z" fill="{c}"/>
+</svg>
