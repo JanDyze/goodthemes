@@ -773,7 +773,7 @@ function TasksCard() {
 const steps = [
   {
     title: "Install",
-    code: `npm install ../goodthemes`,
+    code: `npm install github:JanDyze/goodthemes`,
   },
   {
     title: "Import the styles after your own tokens",

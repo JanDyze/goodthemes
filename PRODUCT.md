@@ -21,7 +21,7 @@ Each theme is a named atmosphere (Exile, First Garden), not just a palette. It c
 ## Operating Context
 - Consumers are shadcn/Tailwind v4 apps that use the standard shadcn tokens (`--background`, `--primary`, `--radius`, `--chart-*`, `--sidebar-*`) and a `.dark` class. Components carry `data-slot` attributes.
 - Kept is the first consumer (a Scripture memorization app).
-- Distribution starts as a local install (`npm install ../goodthemes`) and may be published to npm later.
+- Distribution is a GitHub install (`npm install github:JanDyze/goodthemes`, built by the `prepare` script) and may be published to npm later.
 
 ## Capabilities and Constraints
 - Themes at launch: **Exile** (desert/wilderness) and **First Garden** (garden), each with light and dark.

@@ -79,7 +79,7 @@ They are traced from the artwork in `assets/sigils.png` (light marks on black in
 ## Use it in an app
 
 ```sh
-npm install ../goodthemes   # local, for now
+npm install github:JanDyze/goodthemes   # from GitHub until it is on npm
 ```
 
 ```css
